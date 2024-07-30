@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|c:\\users\\asus\\pictures\\bt2\\ttdn\\psc\\nv_tuan2\\entity_framework\\eftest\\views\\sinhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\views\\sinhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\views\\sinhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\views\\sinhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\models\\sinhviendbcontext.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\models\\sinhviendbcontext.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\views\\sinhvien\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\views\\sinhvien\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\views\\sinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\views\\sinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\eftest\\public\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B39C48C5-1E4D-4700-9DE2-BCBDAEF497A0}|EFtest\\EFtest.csproj|solutionrelative:eftest\\public\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Public\\Css\\Index.css",
+              "RelativeDocumentMoniker": "EFtest\\Public\\Css\\Index.css",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Public\\Css\\Index.css",
+              "RelativeToolTip": "EFtest\\Public\\Css\\Index.css",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAAC4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-24T07:58:23.722Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SinhVienDbContext.Context.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Models\\SinhVienDbContext.Context.cs",
+              "RelativeDocumentMoniker": "EFtest\\Models\\SinhVienDbContext.Context.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Models\\SinhVienDbContext.Context.cs",
+              "RelativeToolTip": "EFtest\\Models\\SinhVienDbContext.Context.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:15:56.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Edit.cshtml",
+              "RelativeDocumentMoniker": "EFtest\\Views\\SinhVien\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Edit.cshtml",
+              "RelativeToolTip": "EFtest\\Views\\SinhVien\\Edit.cshtml",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-25T07:29:09.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Details.cshtml",
+              "RelativeDocumentMoniker": "EFtest\\Views\\SinhVien\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Details.cshtml",
+              "RelativeToolTip": "EFtest\\Views\\SinhVien\\Details.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-25T07:29:09.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Create.cshtml",
+              "RelativeDocumentMoniker": "EFtest\\Views\\SinhVien\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Create.cshtml",
+              "RelativeToolTip": "EFtest\\Views\\SinhVien\\Create.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACYAAACOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-25T04:16:37.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Index.cshtml",
+              "RelativeDocumentMoniker": "EFtest\\Views\\SinhVien\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Views\\SinhVien\\Index.cshtml",
+              "RelativeToolTip": "EFtest\\Views\\SinhVien\\Index.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAASwAoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-24T07:58:14.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SinhVienController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Controllers\\SinhVienController.cs",
+              "RelativeDocumentMoniker": "EFtest\\Controllers\\SinhVienController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan2\\Entity_Framework\\EFtest\\Controllers\\SinhVienController.cs",
+              "RelativeToolTip": "EFtest\\Controllers\\SinhVienController.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAD4v1sAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T02:42:14.324Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

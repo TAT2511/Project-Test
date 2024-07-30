@@ -1,0 +1,132 @@
+﻿@model IEnumerable<EFtest.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+@*Link css,frontawesome,js,...*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+<link rel="stylesheet" href="~/Public/Css/Index.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@*Khung tìm kiếm*@
+<h2>
+    <span style="margin-right: 5px;"><button class="button-search-hide"><i class="fas fa-list"></i></button></span>Danh sách sinh viên
+</h2>
+
+<div class="search-table">
+    <div class="search-filter-section">
+        @using (Html.BeginForm("Filter", "SinhVien", FormMethod.Get))
+        {
+            <div class="filter-section">
+                <div class="filter-column">
+                    <label class="dropdown-label">Tên Khoa:</label>
+                    <select id="khoaDropdown" name="makhoa" class="form-control">
+                        <option value="">-- Chọn Khoa --</option>
+                        @foreach (var khoa in ViewBag.KhoaList as List<EFtest.Models.Khoa>)
+                        {
+                            <option value="@khoa.makhoa" @(khoa.makhoa == ViewBag.SelectedKhoa ? "selected" : "")>@khoa.tenkhoa</option>
+                        }
+                    </select>
+                </div>
+                <div class="filter-column">
+                    <label class="dropdown-label">Tìm kiếm:</label>
+                    <input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+                </div>
+                <button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
+            </div>
+        }
+
+        <a href="@Url.Action("Create")" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
+        <button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+
+    </div>
+</div>
+@*Khung danh sách*@
+<table class="table">
+    <tr>
+        <th><input type="checkbox" id="selectAll"></th>
+        <th>Mã sinh viên</th>
+        <th>Tên sinh viên</th>
+        <th>Mã khoa</th>
+        <th>Chức năng</th>
+    </tr>
+    @foreach (var item in ViewBag.SinhViens as List<EFtest.Models.SinhVien>)
+    {
+        <tr>
+            <td>
+                <input type="checkbox" name="selectedItems" value="@item.masv">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.masv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tensv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.makhoa) -
+                @Html.DisplayFor(modelItem => item.Khoa.tenkhoa)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.masv })" class="button"><i class="fas fa-pencil-alt"></i></a> |
+                <a href="@Url.Action("Details", new { id = item.masv })" class="button"><i class="fas fa-user"></i></a>
+                <form action="@Url.Action("Delete", "SinhVien")" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa?')">
+                    @Html.Hidden("id", item.masv)
+                    <button type="submit" class="button delete-button"><i class="fas fa-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+    }
+    @*@foreach (var item in Model)*@
+
+</table>
+
+<script>
+    //Hiển thị và ẩn tìm kiếm nâng cao
+    $(document).ready(function () {
+        var isSearchTableOpen = true;
+
+        $('.button-search-hide').click(function () {
+            if (isSearchTableOpen) {
+                $('.search-table').hide(); // Đóng lớp search-table
+                isSearchTableOpen = false;
+            } else {
+                $('.search-table').show(); // Mở lại lớp search-table
+                isSearchTableOpen = true;
+            }
+        });
+    });
+    //Chọn checkbox
+    $(document).ready(function () {
+        $('#selectAll').click(function () {
+            $('input[name="selectedItems"]').prop('checked', this.checked);
+        });
+    });
+    //Xóa các checkbox đã chọn
+   $(document).ready(function () {
+    $('#button-delete-selected').click(function () {
+        var selectedIds = [];
+        $('input[name="selectedItems"]:checked').each(function () {
+            selectedIds.push($(this).val());
+        });
+
+        if (selectedIds.length > 0) {
+            if (confirm('Bạn có chắc chắn muốn xóa các mục đã chọn?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteSelectedItems", "SinhVien")',
+                    type: 'POST',
+                    data: { ids: selectedIds },
+                    success: function(response) {
+                        location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Đã xảy ra lỗi trong quá trình xóa dữ liệu.');
+                    }
+                });
+            }
+        } else {
+            alert('Vui lòng chọn ít nhất một mục để xóa');
+        }
+    });
+});
+
+</script>
