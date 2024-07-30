@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Project Demo</h1>
+        <h2>@ViewBag.Message</h2>
+        <p class="lead">Quản lý cựu sinh viên</p>
+        <p>@Html.ActionLink("Trang chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link, btn btn-primary btn-md" })</p>
+
+    </section>
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Getting started</h2>
+            <p>
+            </p>
+            <p><a class="btn btn-outline-dark" href="">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="">Get more libraries</h2>
+            <p></p>
+            <p><a class="btn btn-outline-dark" href="">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Web Hosting</h2>
+            <p></p>
+            <p><a class="btn btn-outline-dark" href="">Learn more &raquo;</a></p>
+        </section>
+    </div>
+</main>

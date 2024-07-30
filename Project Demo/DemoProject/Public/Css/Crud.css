@@ -1,0 +1,81 @@
+﻿/*h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-horizontal {
+    margin: 20px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.col-md-2 {
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+}
+
+.col-md-10 {
+    width: 78%;
+    float: left;
+}*/
+
+/*.form-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;  Khoảng cách giữa các cột 
+    justify-items: center;  Căn giữa theo chiều ngang 
+}
+
+.form-group {
+    margin: 10px;  Khoảng cách giữa các phần tử 
+    width: 100%;
+}
+
+.col-md-10 {
+    grid-column: span 3;  Chiếm 3 cột trong grid 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }*/
+

@@ -1,0 +1,138 @@
+﻿@model DemoProject.Models.Alumni_CuuSV
+
+@{
+    ViewBag.Title = "Details";
+}
+@* Link css,frontawesome,... *@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+<link rel="stylesheet" href="~/Public/Css/Details.css" />
+
+<div class="info-CuuSinhVien">
+    <div class="personal-info">
+        <h2><i class="fas fa-user-circle"></i><span class="icon-space">Thông tin cá nhân</span></h2>
+
+        <dl class="personal-horizontal">
+            <div class="horizontal-row">
+                <dt>Mã số sinh viên</dt>
+                <dd>@Html.DisplayFor(model => model.MaSoSV)</dd>
+            </div>
+            <div class="horizontal-row">
+                <dt>Họ tên cựu sinh viên</dt>
+                <dd>@Html.DisplayFor(model => model.HoTen_CuuSV)</dd>
+            </div>
+            <div class="horizontal-row">
+                <dt>Mã định danh</dt>
+                <dd>@Html.DisplayFor(model => model.MaDinhDanh)</dd>
+            </div>
+            <div class="horizontal-row">
+                <dt>Giới tính</dt>
+                <dd>@Html.DisplayFor(model => model.GioiTinh)</dd>
+            </div>
+            <div class="horizontal-row">
+                <dt>Địa chỉ liên hệ</dt>
+                <dd>@Html.DisplayFor(model => model.DiaChiLienHe)</dd>
+            </div>
+            <div class="horizontal-row">
+                <dt>Số điện thoại</dt>
+                <dd>@Html.DisplayFor(model => model.SoDienThoai)</dd>
+            </div>
+        </dl>
+        <a href="@Url.Action("Edit", "Edit", new { id = Model.MaSoSV.ToString() })" class="button"><i class="fas fa-pencil-alt"></i><span style="margin-left: 5px;"> Sửa sinh viên</span></a>
+        <a href="@Url.Action("Index", "CuuSinhVien")" class="button"><i class="fas fa-arrow-left"></i><span style="margin-left: 5px;"> Trở lại</span></a>
+    </div>
+    <div class="detail-info">
+        <h2><i class="fas fa-info-circle"></i><span class="icon-space">Thông tin chi tiết</span></h2>
+        <dl class="details-horizontal">
+            <dt>Email</dt>
+            <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt>Dân tộc</dt>
+            <dd>@Html.DisplayFor(model => model.DanToc)</dd>
+
+            <dt>Tôn giáo</dt>
+            <dd>@Html.DisplayFor(model => model.TonGiao)</dd>
+
+            <dt>Tham gia đảng</dt>
+            <dd>@Html.DisplayFor(model => model.ThamGiaDang)</dd>
+
+            <dt>Ngày vào đảng</dt>
+            <dd>@Html.DisplayFor(model => model.NgayVaoDang)</dd>
+
+            <dt>Tham gia đoàn</dt>
+            <dd>@Html.DisplayFor(model => model.ThamGiaDoan)</dd>
+
+            <dt>Ngày vào đoàn</dt>
+            <dd>@Html.DisplayFor(model => model.NgayVaoDoan)</dd>
+        </dl>
+    </div>
+
+    <div class="contact-course-container">
+        <div class="contact-info">
+            <h2><i class="fas fa-bookmark"></i><span class="icon-space">Quyết định đào tạo</span></h2>
+            <dl class="personal-horizontal">
+                @if (Model.Alumni_QuyetDinhDaoTao.Any())
+                {
+                    var dataQuyetDinhDaoTao = Model.Alumni_QuyetDinhDaoTao.First();
+                    <div class="horizontal-row">
+                        <dt>Năm học</dt>
+                        <dd>@dataQuyetDinhDaoTao.NamHoc</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Học kỳ</dt>
+                        <dd>@dataQuyetDinhDaoTao.HocKy</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Số quyết định</dt>
+                        <dd>@dataQuyetDinhDaoTao.SoQuyetDinh</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Loại quyết định</dt>
+                        <dd>@dataQuyetDinhDaoTao.LoaiQuyetDinh</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Nội dung</dt>
+                        <dd>@dataQuyetDinhDaoTao.NoiDung</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Người ký</dt>
+                        <dd>@dataQuyetDinhDaoTao.NguoiKy</dd>
+                    </div>
+                }
+            </dl>
+        </div>
+        <div class="course-info">
+            <h2><i class="fas fa-book-open"></i><span class="icon-space">Thông tin đào tạo</span></h2>
+            <dl class="personal-horizontal">
+                @if (Model.Alumni_ThongTinDaoTao.Any())
+                {
+                    var dataThongTinDaoTao = Model.Alumni_ThongTinDaoTao.First();
+                    <div class="horizontal-row">
+                        <dt>Niên khóa</dt>
+                        <dd>@dataThongTinDaoTao.NienKhoa</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Tên khóa học</dt>
+                        <dd>@dataThongTinDaoTao.TenKhoaHoc</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Mã ngành học</dt>
+                        <dd>@dataThongTinDaoTao.MaNganhHoc</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Tên ngành học</dt>
+                        <dd>@dataThongTinDaoTao.TenNganhHoc</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Hình thức đào tạo</dt>
+                        <dd>@dataThongTinDaoTao.HinhThucDaoTao</dd>
+                    </div>
+                    <div class="horizontal-row">
+                        <dt>Lớp sinh viên</dt>
+                        <dd>@dataThongTinDaoTao.LopSV</dd>
+                    </div>
+                }
+            </dl>
+        </div>
+    </div>
+</div>
+

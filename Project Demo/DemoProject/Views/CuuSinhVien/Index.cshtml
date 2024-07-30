@@ -1,0 +1,213 @@
+﻿@model IEnumerable<DemoProject.Models.Alumni_CuuSV>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="~/Public/Css/List.css" />
+
+@*Tìm kiếm nâng cao*@
+<h2>
+    <span style="margin-right: 5px;"><button class="button-search-hide"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
+</h2>
+
+<div class="search-table">
+    <div class="search-filter-section">
+        @using (Html.BeginForm("Filter", "CuuSinhVien", FormMethod.Get))
+        {
+            <div class="filter-section">
+                <div class="filter-column">
+                    <label class="dropdown-label">Tên Ngành Học:</label>
+                    <select id="TenNganhHoc" name="TenNganhHoc" class="form-control">
+                        <option value="">-- Chọn Ngành Học --</option>
+                        @foreach (var tenNganhHoc in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+                        {
+                            <option value="@tenNganhHoc.TenNganhHoc" @(tenNganhHoc.TenNganhHoc == ViewBag.SelectedNganhHoc ? "selected" : "")>@tenNganhHoc.TenNganhHoc</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="filter-column">
+                    <label class="dropdown-label">Tên Khóa Học:</label>
+                    <select id="TenKhoaHoc" name="TenKhoaHoc" class="form-control">
+                        <option value="">-- Chọn Khóa Học --</option>
+                        @foreach (var tenKhoaHoc in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+                        {
+                            <option value="@tenKhoaHoc.TenKhoaHoc" @(tenKhoaHoc.TenKhoaHoc == ViewBag.SelectedKhoaHoc ? "selected" : "")>@tenKhoaHoc.TenKhoaHoc</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="filter-column">
+                    <label class="dropdown-label">Tên Niên Khóa:</label>
+                    <select id="TenNienKhoa" name="TenNienKhoa" class="form-control">
+                        <option value="">-- Niên Khóa --</option>
+                        @foreach (var tenNienKhoa in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+                        {
+                            <option value="@tenNienKhoa.NienKhoa" @(tenNienKhoa.NienKhoa == ViewBag.SelectedNienKhoa ? "selected" : "")>@tenNienKhoa.NienKhoa</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="filter-column">
+                    <label class="dropdown-label">Tìm kiếm:</label>
+                    <input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+                </div>
+                <button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
+            </div>
+        }
+
+        <a href="@Url.Action("Create")" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
+        <button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+
+    </div>
+</div>
+@*Danh sách cựu sinh viên*@
+
+<table class="table">
+    <tr>
+        <th><input type="checkbox" id="selectAll"></th>
+        <th>
+            Mã số sinh viên
+        </th>
+        <th>
+            Họ tên cựu sinh viên
+        </th>
+        <th>
+            Mã định danh
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Địa chỉ liên hệ
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>Chức năng</th>
+    </tr>
+    @foreach (var item in ViewBag.SinhViens as List<DemoProject.Models.Alumni_CuuSV>)
+    {
+        <tr>
+            <td>
+                <input type="checkbox" name="selectedItems" value="@item.Id">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSoSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen_CuuSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDinhDanh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChiLienHe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.Id })" class="button"><i class="fas fa-pencil-alt"></i></a> |
+                <a href="@Url.Action("Details", new { id = item.Id })" class="button"><i class="fas fa-user"></i></a>
+                <form action="@Url.Action("Delete", "CuuSinhVien")" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa?')">
+                    @Html.Hidden("id", item.Id)
+                    <button type="submit" class="button delete-button"><i class="fas fa-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+@*Phân trang*@
+<div class="pagination">
+    @if (ViewBag.TotalItems > ViewBag.PageSize)
+    {
+        int totalPages = ViewBag.TotalPages;
+        int currentPage = ViewBag.CurrentPage;
+
+        if (totalPages > 1)
+        {
+            if (currentPage > 1)
+            {
+                <a class="page-link" href="@Url.Action("Index", new { page = 1 })">&lt;&lt;</a>
+                <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">&lt;</a>
+            }
+
+            for (int i = 1; i <= totalPages; i++)
+            {
+                <a class="page-link @(i == currentPage ? "active" : "")" href="@Url.Action("Index", new { page = i })">@i</a>
+            }
+
+            if (currentPage < totalPages)
+            {
+                <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">&gt;</a>
+                <a class="page-link" href="@Url.Action("Index", new { page = totalPages })">&gt;&gt;</a>
+            }
+        }
+    }
+</div>
+
+
+
+@*Javascript*@
+<script>
+    //Hiển thị và ẩn tìm kiếm nâng cao
+    $(document).ready(function () {
+        var isSearchTableOpen = true;
+
+        $('.button-search-hide').click(function () {
+            if (isSearchTableOpen) {
+                $('.search-table').hide(); // Đóng lớp search-table
+                isSearchTableOpen = false;
+            } else {
+                $('.search-table').show(); // Mở lại lớp search-table
+                isSearchTableOpen = true;
+            }
+        });
+    });
+    //Chọn checkbox
+    $(document).ready(function () {
+        $('#selectAll').click(function () {
+            $('input[name="selectedItems"]').prop('checked', this.checked);
+        });
+    });
+    //Xóa các checkbox đã chọn
+   $(document).ready(function () {
+    $('#button-delete-selected').click(function () {
+        var selectedIds = [];
+        $('input[name="selectedItems"]:checked').each(function () {
+            selectedIds.push($(this).val());
+        });
+
+        if (selectedIds.length > 0) {
+            if (confirm('Bạn có chắc chắn muốn xóa các mục đã chọn?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteSelectedItems", "CuuSinhVien")',
+                    type: 'POST',
+                    data: { ids: selectedIds },
+                    success: function(response) {
+                        location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Đã xảy ra lỗi trong quá trình xóa dữ liệu.');
+                    }
+                });
+            }
+        } else {
+            alert('Vui lòng chọn ít nhất một mục để xóa');
+        }
+    });
+});
+</script>
+

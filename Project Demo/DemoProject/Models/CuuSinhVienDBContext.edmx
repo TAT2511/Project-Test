@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PSC_AlumniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alumni_CuuSV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Truong_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MaSoSV" Type="varchar" MaxLength="50" />
+          <Property Name="Ho_CuuSV" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Ten_CuuSV" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="HoTen_CuuSV" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MaDinhDanh" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GioiTinh" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="DanToc" Type="nvarchar" MaxLength="255" />
+          <Property Name="TonGiao" Type="nvarchar" MaxLength="255" />
+          <Property Name="QuocGia_Id" Type="uniqueidentifier" />
+          <Property Name="TinhThanh_Id" Type="uniqueidentifier" />
+          <Property Name="QuanHuyen_Id" Type="uniqueidentifier" />
+          <Property Name="XaPhuong_Id" Type="uniqueidentifier" />
+          <Property Name="DiaChiLienHe" Type="nvarchar" MaxLength="1000" />
+          <Property Name="HinhAnhDaiDien" Type="varchar(max)" />
+          <Property Name="ThamGiaDoan" Type="nvarchar" MaxLength="255" />
+          <Property Name="NgayVaoDoan" Type="datetime" />
+          <Property Name="ThamGiaDang" Type="nvarchar" MaxLength="255" />
+          <Property Name="NgayVaoDang" Type="datetime" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="20" />
+          <Property Name="QuocTich" Type="nvarchar" MaxLength="255" />
+          <Property Name="NgaySinh" Type="varchar" MaxLength="10" />
+          <Property Name="NoiSinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="SuDung" Type="bit" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Alumni_KetQuaDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ThongTinDaoTao_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TC_TongSo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TC_TichLuy" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DiemTB_He10" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DiemTB_He4" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DiemRenLuyen" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="XepLoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="XepLoaiRenLuyen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Alumni_KetQuaDaoTao_ChiTiet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KetQuaDaoTao_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TenMonHoc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SoTC" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Diem_He10" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Diem_He4" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DiemChu" Type="nvarchar" MaxLength="255" />
+          <Property Name="KetQua" Type="nvarchar" MaxLength="255" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Alumni_QuyetDinhDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ThongTinDaoTao_Id" Type="uniqueidentifier" />
+          <Property Name="NamHoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="HocKy" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoQuyetDinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="LoaiQuyetDinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="NguoiKy" Type="nvarchar" MaxLength="1000" />
+          <Property Name="NgayKy" Type="datetime" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Alumni_ThongTinDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NienKhoa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="MaNganhHoc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenNganhHoc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="HinhThucDaoTao" Type="nvarchar" MaxLength="255" />
+          <Property Name="LopSV" Type="nvarchar" MaxLength="100" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="255" />
+          <Property Name="DoiTuong" Type="nvarchar" MaxLength="255" />
+          <Property Name="THPTLop12" Type="nvarchar" MaxLength="255" />
+          <Property Name="MaChuyenNganh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="1000" />
+          <Property Name="NamTotNghiep" Type="int" Nullable="false" />
+          <Property Name="SoQuyetDinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayKyQuyetDinh" Type="date" />
+          <Property Name="NguoiKyQuyetDinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="ChucVuNguoiKy" Type="nvarchar" MaxLength="255" />
+          <Property Name="NgonNguDaoTao" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoVaoSoGocCapBang" Type="varchar" MaxLength="50" />
+          <Property Name="SoHieuVanBang" Type="varchar" MaxLength="50" />
+          <Property Name="MaKhoaHoc_TiengAnh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenKhoaHoc_TiengAnh" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MaNganhHoc_TiengAnh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenNganhHoc_TiengAnh" Type="nvarchar" MaxLength="1000" />
+          <Property Name="HinhThucDaoTao_TiengAnh" Type="nvarchar" MaxLength="255" />
+          <Property Name="HuongDaoTao" Type="nvarchar" MaxLength="255" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao">
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="1" />
+          <End Role="Alumni_KetQuaDaoTao" Type="Self.Alumni_KetQuaDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_KetQuaDaoTao">
+              <PropertyRef Name="ThongTinDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao">
+          <End Role="Alumni_KetQuaDaoTao" Type="Self.Alumni_KetQuaDaoTao" Multiplicity="1" />
+          <End Role="Alumni_KetQuaDaoTao_ChiTiet" Type="Self.Alumni_KetQuaDaoTao_ChiTiet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_KetQuaDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_KetQuaDaoTao_ChiTiet">
+              <PropertyRef Name="KetQuaDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV">
+          <End Role="Alumni_CuuSV" Type="Self.Alumni_CuuSV" Multiplicity="1" />
+          <End Role="Alumni_QuyetDinhDaoTao" Type="Self.Alumni_QuyetDinhDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_CuuSV">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_QuyetDinhDaoTao">
+              <PropertyRef Name="CuuSV_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao">
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="0..1" />
+          <End Role="Alumni_QuyetDinhDaoTao" Type="Self.Alumni_QuyetDinhDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_QuyetDinhDaoTao">
+              <PropertyRef Name="ThongTinDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_ThongTinDaoTao_Alumni_CuuSV">
+          <End Role="Alumni_CuuSV" Type="Self.Alumni_CuuSV" Multiplicity="1" />
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_CuuSV">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="CuuSV_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PSC_AlumniModelStoreContainer">
+          <EntitySet Name="Alumni_CuuSV" EntityType="Self.Alumni_CuuSV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alumni_KetQuaDaoTao" EntityType="Self.Alumni_KetQuaDaoTao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alumni_KetQuaDaoTao_ChiTiet" EntityType="Self.Alumni_KetQuaDaoTao_ChiTiet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alumni_QuyetDinhDaoTao" EntityType="Self.Alumni_QuyetDinhDaoTao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alumni_ThongTinDaoTao" EntityType="Self.Alumni_ThongTinDaoTao" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao" Association="Self.FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao">
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+            <End Role="Alumni_KetQuaDaoTao" EntitySet="Alumni_KetQuaDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao" Association="Self.FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao">
+            <End Role="Alumni_KetQuaDaoTao" EntitySet="Alumni_KetQuaDaoTao" />
+            <End Role="Alumni_KetQuaDaoTao_ChiTiet" EntitySet="Alumni_KetQuaDaoTao_ChiTiet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV" Association="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV">
+            <End Role="Alumni_CuuSV" EntitySet="Alumni_CuuSV" />
+            <End Role="Alumni_QuyetDinhDaoTao" EntitySet="Alumni_QuyetDinhDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao" Association="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao">
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+            <End Role="Alumni_QuyetDinhDaoTao" EntitySet="Alumni_QuyetDinhDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_ThongTinDaoTao_Alumni_CuuSV" Association="Self.FK_Alumni_ThongTinDaoTao_Alumni_CuuSV">
+            <End Role="Alumni_CuuSV" EntitySet="Alumni_CuuSV" />
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PSC_AlumniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alumni_CuuSV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Truong_Id" Type="Guid" Nullable="false" />
+          <Property Name="MaSoSV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ho_CuuSV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten_CuuSV" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoTen_CuuSV" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MaDinhDanh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DanToc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TonGiao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuocGia_Id" Type="Guid" />
+          <Property Name="TinhThanh_Id" Type="Guid" />
+          <Property Name="QuanHuyen_Id" Type="Guid" />
+          <Property Name="XaPhuong_Id" Type="Guid" />
+          <Property Name="DiaChiLienHe" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnhDaiDien" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ThamGiaDoan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgayVaoDoan" Type="DateTime" Precision="3" />
+          <Property Name="ThamGiaDang" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgayVaoDang" Type="DateTime" Precision="3" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="QuocTich" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NoiSinh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SuDung" Type="Boolean" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastModified" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumni_QuyetDinhDaoTao" Relationship="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV" FromRole="Alumni_CuuSV" ToRole="Alumni_QuyetDinhDaoTao" />
+          <NavigationProperty Name="Alumni_ThongTinDaoTao" Relationship="Self.FK_Alumni_ThongTinDaoTao_Alumni_CuuSV" FromRole="Alumni_CuuSV" ToRole="Alumni_ThongTinDaoTao" />
+        </EntityType>
+        <EntityType Name="Alumni_KetQuaDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="Guid" Nullable="false" />
+          <Property Name="ThongTinDaoTao_Id" Type="Guid" Nullable="false" />
+          <Property Name="TC_TongSo" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TC_TichLuy" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DiemTB_He10" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DiemTB_He4" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DiemRenLuyen" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="XepLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="XepLoaiRenLuyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastModified" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumni_ThongTinDaoTao" Relationship="Self.FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao" FromRole="Alumni_KetQuaDaoTao" ToRole="Alumni_ThongTinDaoTao" />
+          <NavigationProperty Name="Alumni_KetQuaDaoTao_ChiTiet" Relationship="Self.FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao" FromRole="Alumni_KetQuaDaoTao" ToRole="Alumni_KetQuaDaoTao_ChiTiet" />
+        </EntityType>
+        <EntityType Name="Alumni_KetQuaDaoTao_ChiTiet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="KetQuaDaoTao_Id" Type="Guid" Nullable="false" />
+          <Property Name="MaMonHoc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenMonHoc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoTC" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Diem_He10" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Diem_He4" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DiemChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KetQua" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastModified" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumni_KetQuaDaoTao" Relationship="Self.FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao" FromRole="Alumni_KetQuaDaoTao_ChiTiet" ToRole="Alumni_KetQuaDaoTao" />
+        </EntityType>
+        <EntityType Name="Alumni_QuyetDinhDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="Guid" Nullable="false" />
+          <Property Name="ThongTinDaoTao_Id" Type="Guid" />
+          <Property Name="NamHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HocKy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SoQuyetDinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiQuyetDinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiKy" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="NgayKy" Type="DateTime" Precision="3" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastModified" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumni_CuuSV" Relationship="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV" FromRole="Alumni_QuyetDinhDaoTao" ToRole="Alumni_CuuSV" />
+          <NavigationProperty Name="Alumni_ThongTinDaoTao" Relationship="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao" FromRole="Alumni_QuyetDinhDaoTao" ToRole="Alumni_ThongTinDaoTao" />
+        </EntityType>
+        <EntityType Name="Alumni_ThongTinDaoTao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CuuSV_Id" Type="Guid" Nullable="false" />
+          <Property Name="NienKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenKhoaHoc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaNganhHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenNganhHoc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HinhThucDaoTao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LopSV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ChucVu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DoiTuong" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="THPTLop12" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MaChuyenNganh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TenChuyenNganh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="NamTotNghiep" Type="Int32" Nullable="false" />
+          <Property Name="SoQuyetDinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayKyQuyetDinh" Type="DateTime" Precision="0" />
+          <Property Name="NguoiKyQuyetDinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ChucVuNguoiKy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgonNguDaoTao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoVaoSoGocCapBang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SoHieuVanBang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaKhoaHoc_TiengAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TenKhoaHoc_TiengAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MaNganhHoc_TiengAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TenNganhHoc_TiengAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="HinhThucDaoTao_TiengAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HuongDaoTao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastModified" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumni_CuuSV" Relationship="Self.FK_Alumni_ThongTinDaoTao_Alumni_CuuSV" FromRole="Alumni_ThongTinDaoTao" ToRole="Alumni_CuuSV" />
+          <NavigationProperty Name="Alumni_KetQuaDaoTao" Relationship="Self.FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao" FromRole="Alumni_ThongTinDaoTao" ToRole="Alumni_KetQuaDaoTao" />
+          <NavigationProperty Name="Alumni_QuyetDinhDaoTao" Relationship="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao" FromRole="Alumni_ThongTinDaoTao" ToRole="Alumni_QuyetDinhDaoTao" />
+        </EntityType>
+        <Association Name="FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV">
+          <End Role="Alumni_CuuSV" Type="Self.Alumni_CuuSV" Multiplicity="1" />
+          <End Role="Alumni_QuyetDinhDaoTao" Type="Self.Alumni_QuyetDinhDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_CuuSV">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_QuyetDinhDaoTao">
+              <PropertyRef Name="CuuSV_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_ThongTinDaoTao_Alumni_CuuSV">
+          <End Role="Alumni_CuuSV" Type="Self.Alumni_CuuSV" Multiplicity="1" />
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_CuuSV">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="CuuSV_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao">
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="1" />
+          <End Role="Alumni_KetQuaDaoTao" Type="Self.Alumni_KetQuaDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_KetQuaDaoTao">
+              <PropertyRef Name="ThongTinDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao">
+          <End Role="Alumni_KetQuaDaoTao" Type="Self.Alumni_KetQuaDaoTao" Multiplicity="1" />
+          <End Role="Alumni_KetQuaDaoTao_ChiTiet" Type="Self.Alumni_KetQuaDaoTao_ChiTiet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_KetQuaDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_KetQuaDaoTao_ChiTiet">
+              <PropertyRef Name="KetQuaDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao">
+          <End Role="Alumni_ThongTinDaoTao" Type="Self.Alumni_ThongTinDaoTao" Multiplicity="0..1" />
+          <End Role="Alumni_QuyetDinhDaoTao" Type="Self.Alumni_QuyetDinhDaoTao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni_ThongTinDaoTao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alumni_QuyetDinhDaoTao">
+              <PropertyRef Name="ThongTinDaoTao_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PSC_AlumniEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alumni_CuuSV" EntityType="Self.Alumni_CuuSV" />
+          <EntitySet Name="Alumni_KetQuaDaoTao" EntityType="Self.Alumni_KetQuaDaoTao" />
+          <EntitySet Name="Alumni_KetQuaDaoTao_ChiTiet" EntityType="Self.Alumni_KetQuaDaoTao_ChiTiet" />
+          <EntitySet Name="Alumni_QuyetDinhDaoTao" EntityType="Self.Alumni_QuyetDinhDaoTao" />
+          <EntitySet Name="Alumni_ThongTinDaoTao" EntityType="Self.Alumni_ThongTinDaoTao" />
+          <AssociationSet Name="FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV" Association="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV">
+            <End Role="Alumni_CuuSV" EntitySet="Alumni_CuuSV" />
+            <End Role="Alumni_QuyetDinhDaoTao" EntitySet="Alumni_QuyetDinhDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_ThongTinDaoTao_Alumni_CuuSV" Association="Self.FK_Alumni_ThongTinDaoTao_Alumni_CuuSV">
+            <End Role="Alumni_CuuSV" EntitySet="Alumni_CuuSV" />
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao" Association="Self.FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao">
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+            <End Role="Alumni_KetQuaDaoTao" EntitySet="Alumni_KetQuaDaoTao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao" Association="Self.FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao">
+            <End Role="Alumni_KetQuaDaoTao" EntitySet="Alumni_KetQuaDaoTao" />
+            <End Role="Alumni_KetQuaDaoTao_ChiTiet" EntitySet="Alumni_KetQuaDaoTao_ChiTiet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao" Association="Self.FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao">
+            <End Role="Alumni_ThongTinDaoTao" EntitySet="Alumni_ThongTinDaoTao" />
+            <End Role="Alumni_QuyetDinhDaoTao" EntitySet="Alumni_QuyetDinhDaoTao" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PSC_AlumniModelStoreContainer" CdmEntityContainer="PSC_AlumniEntities">
+          <EntitySetMapping Name="Alumni_CuuSV">
+            <EntityTypeMapping TypeName="PSC_AlumniModel.Alumni_CuuSV">
+              <MappingFragment StoreEntitySet="Alumni_CuuSV">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Truong_Id" ColumnName="Truong_Id" />
+                <ScalarProperty Name="MaSoSV" ColumnName="MaSoSV" />
+                <ScalarProperty Name="Ho_CuuSV" ColumnName="Ho_CuuSV" />
+                <ScalarProperty Name="Ten_CuuSV" ColumnName="Ten_CuuSV" />
+                <ScalarProperty Name="HoTen_CuuSV" ColumnName="HoTen_CuuSV" />
+                <ScalarProperty Name="MaDinhDanh" ColumnName="MaDinhDanh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+                <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+                <ScalarProperty Name="QuocGia_Id" ColumnName="QuocGia_Id" />
+                <ScalarProperty Name="TinhThanh_Id" ColumnName="TinhThanh_Id" />
+                <ScalarProperty Name="QuanHuyen_Id" ColumnName="QuanHuyen_Id" />
+                <ScalarProperty Name="XaPhuong_Id" ColumnName="XaPhuong_Id" />
+                <ScalarProperty Name="DiaChiLienHe" ColumnName="DiaChiLienHe" />
+                <ScalarProperty Name="HinhAnhDaiDien" ColumnName="HinhAnhDaiDien" />
+                <ScalarProperty Name="ThamGiaDoan" ColumnName="ThamGiaDoan" />
+                <ScalarProperty Name="NgayVaoDoan" ColumnName="NgayVaoDoan" />
+                <ScalarProperty Name="ThamGiaDang" ColumnName="ThamGiaDang" />
+                <ScalarProperty Name="NgayVaoDang" ColumnName="NgayVaoDang" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="SuDung" ColumnName="SuDung" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alumni_KetQuaDaoTao">
+            <EntityTypeMapping TypeName="PSC_AlumniModel.Alumni_KetQuaDaoTao">
+              <MappingFragment StoreEntitySet="Alumni_KetQuaDaoTao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CuuSV_Id" ColumnName="CuuSV_Id" />
+                <ScalarProperty Name="ThongTinDaoTao_Id" ColumnName="ThongTinDaoTao_Id" />
+                <ScalarProperty Name="TC_TongSo" ColumnName="TC_TongSo" />
+                <ScalarProperty Name="TC_TichLuy" ColumnName="TC_TichLuy" />
+                <ScalarProperty Name="DiemTB_He10" ColumnName="DiemTB_He10" />
+                <ScalarProperty Name="DiemTB_He4" ColumnName="DiemTB_He4" />
+                <ScalarProperty Name="DiemRenLuyen" ColumnName="DiemRenLuyen" />
+                <ScalarProperty Name="XepLoai" ColumnName="XepLoai" />
+                <ScalarProperty Name="XepLoaiRenLuyen" ColumnName="XepLoaiRenLuyen" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alumni_KetQuaDaoTao_ChiTiet">
+            <EntityTypeMapping TypeName="PSC_AlumniModel.Alumni_KetQuaDaoTao_ChiTiet">
+              <MappingFragment StoreEntitySet="Alumni_KetQuaDaoTao_ChiTiet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KetQuaDaoTao_Id" ColumnName="KetQuaDaoTao_Id" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="SoTC" ColumnName="SoTC" />
+                <ScalarProperty Name="Diem_He10" ColumnName="Diem_He10" />
+                <ScalarProperty Name="Diem_He4" ColumnName="Diem_He4" />
+                <ScalarProperty Name="DiemChu" ColumnName="DiemChu" />
+                <ScalarProperty Name="KetQua" ColumnName="KetQua" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alumni_QuyetDinhDaoTao">
+            <EntityTypeMapping TypeName="PSC_AlumniModel.Alumni_QuyetDinhDaoTao">
+              <MappingFragment StoreEntitySet="Alumni_QuyetDinhDaoTao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CuuSV_Id" ColumnName="CuuSV_Id" />
+                <ScalarProperty Name="ThongTinDaoTao_Id" ColumnName="ThongTinDaoTao_Id" />
+                <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="SoQuyetDinh" ColumnName="SoQuyetDinh" />
+                <ScalarProperty Name="LoaiQuyetDinh" ColumnName="LoaiQuyetDinh" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alumni_ThongTinDaoTao">
+            <EntityTypeMapping TypeName="PSC_AlumniModel.Alumni_ThongTinDaoTao">
+              <MappingFragment StoreEntitySet="Alumni_ThongTinDaoTao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CuuSV_Id" ColumnName="CuuSV_Id" />
+                <ScalarProperty Name="NienKhoa" ColumnName="NienKhoa" />
+                <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="MaNganhHoc" ColumnName="MaNganhHoc" />
+                <ScalarProperty Name="TenNganhHoc" ColumnName="TenNganhHoc" />
+                <ScalarProperty Name="HinhThucDaoTao" ColumnName="HinhThucDaoTao" />
+                <ScalarProperty Name="LopSV" ColumnName="LopSV" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="DoiTuong" ColumnName="DoiTuong" />
+                <ScalarProperty Name="THPTLop12" ColumnName="THPTLop12" />
+                <ScalarProperty Name="MaChuyenNganh" ColumnName="MaChuyenNganh" />
+                <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
+                <ScalarProperty Name="NamTotNghiep" ColumnName="NamTotNghiep" />
+                <ScalarProperty Name="SoQuyetDinh" ColumnName="SoQuyetDinh" />
+                <ScalarProperty Name="NgayKyQuyetDinh" ColumnName="NgayKyQuyetDinh" />
+                <ScalarProperty Name="NguoiKyQuyetDinh" ColumnName="NguoiKyQuyetDinh" />
+                <ScalarProperty Name="ChucVuNguoiKy" ColumnName="ChucVuNguoiKy" />
+                <ScalarProperty Name="NgonNguDaoTao" ColumnName="NgonNguDaoTao" />
+                <ScalarProperty Name="SoVaoSoGocCapBang" ColumnName="SoVaoSoGocCapBang" />
+                <ScalarProperty Name="SoHieuVanBang" ColumnName="SoHieuVanBang" />
+                <ScalarProperty Name="MaKhoaHoc_TiengAnh" ColumnName="MaKhoaHoc_TiengAnh" />
+                <ScalarProperty Name="TenKhoaHoc_TiengAnh" ColumnName="TenKhoaHoc_TiengAnh" />
+                <ScalarProperty Name="MaNganhHoc_TiengAnh" ColumnName="MaNganhHoc_TiengAnh" />
+                <ScalarProperty Name="TenNganhHoc_TiengAnh" ColumnName="TenNganhHoc_TiengAnh" />
+                <ScalarProperty Name="HinhThucDaoTao_TiengAnh" ColumnName="HinhThucDaoTao_TiengAnh" />
+                <ScalarProperty Name="HuongDaoTao" ColumnName="HuongDaoTao" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
