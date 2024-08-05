@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e415ccdad0241be810cf22bb6da16f6" Name="Diagram1">
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ChiTietSuKien" Width="1.5" PointX="7.5" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ChucNang" Width="1.5" PointX="3" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ChucNang_NhomQuyen" Width="1.5" PointX="5.25" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_CuuSV" Width="1.5" PointX="3" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_DangKySuKien" Width="1.5" PointX="10.5" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_DanhGiaSuKien" Width="1.5" PointX="13.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_DonViHanhChinh" Width="1.5" PointX="0.75" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_HoSoNhanVien" Width="1.5" PointX="6" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_KetQuaDaoTao" Width="1.5" PointX="7.5" PointY="69.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_KetQuaDaoTao_ChiTiet" Width="1.5" PointX="9.75" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_LichSuDongGop" Width="1.5" PointX="12.5" PointY="65" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_LoaiDonViHanhChinh" Width="1.5" PointX="1.5" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_NhanVien" Width="1.5" PointX="6" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_NhomQuyen" Width="1.5" PointX="3" PointY="70.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_QuocGia" Width="1.5" PointX="1.5" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_QuyetDinhDaoTao" Width="1.5" PointX="10.5" PointY="59.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_Taikhoan" Width="1.5" PointX="8.25" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_TaiKhoan_ChucNang" Width="1.5" PointX="5.25" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_TaiKhoan_NhomQuyen" Width="1.5" PointX="13.5" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_TaiKhoanNhanVien_TruongTrucThuoc" Width="1.5" PointX="10.5" PointY="47.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinDaoTao" Width="1.5" PointX="5.25" PointY="70.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinGiaoDich" Width="1.5" PointX="15.75" PointY="54.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinKhoa" Width="1.5" PointX="3" PointY="75.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinQuyQuyenGop" Width="1.5" PointX="3" PointY="79.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinSuKien" Width="1.5" PointX="5.25" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThongTinTruong" Width="1.5" PointX="0.75" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ThuTuc" Width="1.5" PointX="5.25" PointY="80.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_VanBang" Width="1.5" PointX="7.5" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.Alumni_ViecLam" Width="1.5" PointX="5.25" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="PSC_AlumniModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ChiTietSuKien_Alumni_ThongTinSuKien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ChucNang_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ChucNang_NhomQuyen_Alumni_ChucNang" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_ChucNang_Alumni_ChucNang" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ChucNang_NhomQuyen_Alumni_NhomQuyen" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_CuuSV_Alumni_DonViHanhChinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_CuuSV_Alumni_DonViHanhChinh1" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_CuuSV_Alumni_DonViHanhChinh2" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_CuuSV_Alumni_QuocGia" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_CuuSV_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_QuyetDinhDaoTao_Alumni_CuuSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_Taikhoan_Alumni_CuuSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinDaoTao_Alumni_CuuSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThuTuc_Alumni_CuuSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ViecLam_Alumni_CuuSV" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DangKySuKien_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DangKySuKien_Alumni_ThongTinSuKien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinGiaoDich_Alumni_DangKySuKien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DanhGiaSuKien_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DanhGiaSuKien_Alumni_ThongTinSuKien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DonViHanhChinh_Alumni_LoaiDonViHanhChinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DonViHanhChinh_Alumni_QuocGia" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_DonViHanhChinh_Cha_Alumni_DonViHanhChinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_NhanVien_Alumni_DonViHanhChinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_NhanVien_Alumni_DonViHanhChinh1" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_NhanVien_Alumni_DonViHanhChinh2" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_HoSoNhanVien_Alumni_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_HoSoNhanVien_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_KetQuaDaoTao_Alumni_ThongTinDaoTao" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_KetQuaDaoTao_ChiTiet_Alumni_KetQuaDaoTao" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_LichSuDongGop_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_LichSuDongGop_Alumni_ThongTinQuyQuyenGop" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinGiaoDich_Alumni_LichSuDongGop" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_NhanVien_Alumni_QuocGia" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_Taikhoan_Alumni_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_NhomQuyen_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_NhomQuyen_Alumni_NhomQuyen" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_QuyetDinhDaoTao_Alumni_ThongTinDaoTao" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_ChucNang_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_NhomQuyen_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_TruongTrucThuoc_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinGiaoDich_Alumni_Taikhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinGiaoDich_Alumni_Taikhoan1" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_TaiKhoan_TruongTrucThuoc_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_VanBang_Alumni_ThongTinDaoTao" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinKhoa_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinSuKien_Alumni_ThongTinKhoa" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinQuyQuyenGop_Alumni_ThongTinTruong" ManuallyRouted="false" />
+        <AssociationConnector Association="PSC_AlumniModel.FK_Alumni_ThongTinSuKien_Alumni_ThongTinTruong" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
