@@ -19,6 +19,7 @@ namespace DemoProject.Models
         {
             this.Alumni_KetQuaDaoTao = new HashSet<Alumni_KetQuaDaoTao>();
             this.Alumni_QuyetDinhDaoTao = new HashSet<Alumni_QuyetDinhDaoTao>();
+            this.Alumni_VanBang = new HashSet<Alumni_VanBang>();
         }
     
         public System.Guid Id { get; set; }
@@ -62,5 +63,7 @@ namespace DemoProject.Models
         public virtual ICollection<Alumni_KetQuaDaoTao> Alumni_KetQuaDaoTao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alumni_QuyetDinhDaoTao> Alumni_QuyetDinhDaoTao { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alumni_VanBang> Alumni_VanBang { get; set; }
     }
 }

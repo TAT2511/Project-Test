@@ -1,20 +1,52 @@
-﻿
+﻿h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
 
 .form-horizontal {
-    display: grid;
+    margin: 20px;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;  Khoảng cách giữa các cột 
-    justify-items: center;  Căn giữa theo chiều ngang 
+    gap: 5px;
+    display: grid;
+    justify-items: center;
+}
+
+.control-label {
+    font-weight: bold;
 }
 
 .form-group {
-    margin: 10px;  Khoảng cách giữa các phần tử 
     width: 100%;
 }
 
-.col-md-10 {
-    grid-column: span 3;  Chiếm 3 cột trong grid 
+.form-control {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 4px;
 }
+
+.text-danger {
+    color: red;
+}
+
+.col-md-2 {
+    width: 20%;
+    float: left;
+    margin: 15px;
+    margin-right: 10px;
+}
+
+.col-md-10 {
+    width: 78%;
+    margin-top: -10px;
+    float: left;
+}
+
 
 .button-container {
     display: flex;

@@ -81,22 +81,24 @@
         margin-left: 5px;
         cursor: pointer;
     }
-/*Bộ lọc*/
 .filter-section {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: space-between; /* Đẩy các cột ra xa nhau */
 }
 
 .filter-column {
-    flex: 1;
+    flex: 0 0 calc(33.33% - 10px);
     margin-right: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
 
 .dropdown-label {
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .filter-dropdown {
@@ -105,20 +107,22 @@
     border-radius: 5px;
     width: 100%;
 }
-/*nút trên khung tìm kiếm*/
+
+.button-search-container {
+    margin-top: 30px;
+    margin-left: auto; /* Đưa nút sang phải */
+}
+
 .button-search {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    margin: 5px;
     background-color: #ffffff;
     color: black;
     text-decoration: none;
     border: 1px solid black;
     border-radius: 5px;
     transition: background-color 0.3s;
-    float: right;
-    margin-top: 10px;
 }
 
     .button-search:hover {

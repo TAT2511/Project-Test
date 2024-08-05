@@ -1,26 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\demoproject\\views\\cuusinhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|c:\\users\\asus\\pictures\\bt2\\ttdn\\psc\\nv_tuan5\\project demo\\demoproject\\views\\cuusinhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\views\\cuusinhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\demoproject\\public\\css\\crud.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\public\\css\\crud.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|c:\\users\\asus\\pictures\\bt2\\ttdn\\psc\\nv_tuan4\\project-test\\project demo\\demoproject\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|c:\\users\\asus\\pictures\\bt2\\ttdn\\psc\\nv_tuan5\\project demo\\demoproject\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\demoproject\\views\\cuusinhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\demoproject\\views\\cuusinhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\views\\cuusinhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
-              "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
-              "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
-              "ViewState": "AQIAAMcAAAAAAAAAAAASwNYAAAAhAAAA",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
+              "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
+              "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
+              "ViewState": "AQIAAMsAAAAAAAAAAAAswOIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T07:27:41.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
-              "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
-              "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T07:20:33.645Z"
+              "WhenOpened": "2024-08-05T02:07:53.6Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Crud.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Public\\Css\\Crud.css",
-              "RelativeDocumentMoniker": "DemoProject\\Public\\Css\\Crud.css",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Public\\Css\\Crud.css",
-              "RelativeToolTip": "DemoProject\\Public\\Css\\Crud.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-07-30T07:19:15.831Z",
+              "Title": "CuuSinhVienController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Controllers\\CuuSinhVienController.cs",
+              "RelativeDocumentMoniker": "DemoProject\\Controllers\\CuuSinhVienController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Controllers\\CuuSinhVienController.cs",
+              "RelativeToolTip": "DemoProject\\Controllers\\CuuSinhVienController.cs",
+              "ViewState": "AQIAANsAAAAAAAAAAAAewOcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T04:20:22.498Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CuuSinhVienController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Controllers\\CuuSinhVienController.cs",
-              "RelativeDocumentMoniker": "DemoProject\\Controllers\\CuuSinhVienController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Controllers\\CuuSinhVienController.cs",
-              "RelativeToolTip": "DemoProject\\Controllers\\CuuSinhVienController.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAvwCsAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T04:01:00.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
-              "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan4\\Project-Test\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
-              "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Index.cshtml",
-              "ViewState": "AQIAACgAAAAAAAAAAAASwDcAAAAWAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
+              "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\BT2\\TTDN\\PSC\\NV_Tuan5\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
+              "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-29T08:23:44.39Z",
+              "WhenOpened": "2024-08-03T04:07:26.155Z",
               "EditorCaption": ""
             }
           ]

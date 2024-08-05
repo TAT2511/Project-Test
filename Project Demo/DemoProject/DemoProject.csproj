@@ -139,35 +139,110 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Alumni_ChiTietSuKien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ChucNang.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ChucNang_NhomQuyen.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Alumni_CuuSV.cs">
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_DangKySuKien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_DanhGiaSuKien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_DonViHanhChinh.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_HoSoNhanVien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Alumni_KetQuaDaoTao.cs">
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Alumni_KetQuaDaoTao_ChiTiet.cs">
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_LichSuDongGop.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_LoaiDonViHanhChinh.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_NhanVien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_NhomQuyen.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_QuocGia.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Alumni_QuyetDinhDaoTao.cs">
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_Taikhoan.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_TaiKhoanNhanVien_TruongTrucThuoc.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_TaiKhoan_ChucNang.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_TaiKhoan_NhomQuyen.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Alumni_ThongTinDaoTao.cs">
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CuuSinhVienDBContext.Context.cs">
+    <Compile Include="Models\Alumni_ThongTinGiaoDich.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ThongTinKhoa.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ThongTinQuyQuyenGop.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ThongTinSuKien.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ThongTinTruong.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ThuTuc.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_VanBang.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alumni_ViecLam.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrjDemoDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CuuSinhVienDBContext.Context.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CuuSinhVienDBContext.cs">
+    <Compile Include="Models\PrjDemoDbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CuuSinhVienDBContext.tt</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CuuSinhVienDBContext.Designer.cs">
+    <Compile Include="Models\PrjDemoDbContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CuuSinhVienDBContext.edmx</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PrjDemoDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -192,15 +267,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\CuuSinhVienDBContext.Context.tt">
+    <Content Include="Models\PrjDemoDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CuuSinhVienDBContext.Context.cs</LastGenOutput>
-      <DependentUpon>CuuSinhVienDBContext.edmx</DependentUpon>
+      <DependentUpon>PrjDemoDbContext.edmx</DependentUpon>
+      <LastGenOutput>PrjDemoDbContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CuuSinhVienDBContext.tt">
+    <Content Include="Models\PrjDemoDbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CuuSinhVienDBContext.edmx</DependentUpon>
-      <LastGenOutput>CuuSinhVienDBContext.cs</LastGenOutput>
+      <DependentUpon>PrjDemoDbContext.edmx</DependentUpon>
+      <LastGenOutput>PrjDemoDbContext.cs</LastGenOutput>
     </Content>
     <Content Include="Public\Css\List.css" />
     <Content Include="Public\Css\Details.css" />
@@ -211,12 +286,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\CuuSinhVienDBContext.edmx">
+    <EntityDeploy Include="Models\PrjDemoDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CuuSinhVienDBContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>PrjDemoDbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CuuSinhVienDBContext.edmx.diagram">
-      <DependentUpon>CuuSinhVienDBContext.edmx</DependentUpon>
+    <Content Include="Models\PrjDemoDbContext.edmx.diagram">
+      <DependentUpon>PrjDemoDbContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

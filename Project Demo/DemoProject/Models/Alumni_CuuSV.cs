@@ -18,7 +18,10 @@ namespace DemoProject.Models
         public Alumni_CuuSV()
         {
             this.Alumni_QuyetDinhDaoTao = new HashSet<Alumni_QuyetDinhDaoTao>();
+            this.Alumni_Taikhoan = new HashSet<Alumni_Taikhoan>();
             this.Alumni_ThongTinDaoTao = new HashSet<Alumni_ThongTinDaoTao>();
+            this.Alumni_ThuTuc = new HashSet<Alumni_ThuTuc>();
+            this.Alumni_ViecLam = new HashSet<Alumni_ViecLam>();
         }
     
         public System.Guid Id { get; set; }
@@ -55,9 +58,20 @@ namespace DemoProject.Models
         public Nullable<System.DateTime> Deleted { get; set; }
         public string DeletedBy { get; set; }
     
+        public virtual Alumni_DonViHanhChinh Alumni_DonViHanhChinh { get; set; }
+        public virtual Alumni_DonViHanhChinh Alumni_DonViHanhChinh1 { get; set; }
+        public virtual Alumni_DonViHanhChinh Alumni_DonViHanhChinh2 { get; set; }
+        public virtual Alumni_QuocGia Alumni_QuocGia { get; set; }
+        public virtual Alumni_ThongTinTruong Alumni_ThongTinTruong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alumni_QuyetDinhDaoTao> Alumni_QuyetDinhDaoTao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alumni_Taikhoan> Alumni_Taikhoan { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alumni_ThongTinDaoTao> Alumni_ThongTinDaoTao { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alumni_ThuTuc> Alumni_ThuTuc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alumni_ViecLam> Alumni_ViecLam { get; set; }
     }
 }
