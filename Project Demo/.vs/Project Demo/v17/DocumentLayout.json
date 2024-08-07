@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\demoprojectblazor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\demoprojectblazor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DemoProjectBlazor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-07T08:56:38.578Z",
+              "Title": "CuuSinhVienController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
+              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
+              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAABkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T09:47:01.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\appsettings.json",
+              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\appsettings.json",
+              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\appsettings.json",
+              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-07T09:44:58.18Z",
               "EditorCaption": ""
             },
             {
@@ -65,87 +58,9 @@
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Program.cs",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Program.cs",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAkAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:31:57.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Program.cs",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Program.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Program.cs",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:31:53.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-07T08:25:31.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Counter.razor",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Counter.razor",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Counter.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-07T08:25:19.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Weather.razor",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\Pages\\Weather.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-07T08:25:16.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Components\\_Imports.razor",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Components\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-07T08:24:51.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\_Imports.razor",
-              "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\_Imports.razor",
-              "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\_Imports.razor",
-              "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-07T08:24:48.064Z",
+              "WhenOpened": "2024-08-07T09:43:06.781Z",
               "EditorCaption": ""
             }
           ]
