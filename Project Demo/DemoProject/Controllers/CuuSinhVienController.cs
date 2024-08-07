@@ -19,7 +19,7 @@ namespace DemoProject.Controllers
         {
             var CuuSV = dataSinhVien.Alumni_CuuSV.Include("Alumni_ThongTinDaoTao").Include("Alumni_QuyetDinhDaoTao").ToList();
 
-            int pageSize = 10; // Số lượng phần tử trên mỗi trang
+            int pageSize = 5; // Số lượng phần tử trên mỗi trang
             int pageNumber = page ?? 1;
             int totalItems = CuuSV.Count();
 
