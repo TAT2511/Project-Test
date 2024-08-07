@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorArchitectureExample.Application\BlazorArchitectureExample.Application.csproj" />
+  </ItemGroup>
+
 </Project>
