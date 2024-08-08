@@ -5,9 +5,9 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProject", "DemoProject\DemoProject.csproj", "{76B46996-0AEF-4F13-AB12-E33CF596FCBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProjectBlazor", "DemoProjectBlazor\DemoProjectBlazor\DemoProjectBlazor.csproj", "{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoProjectBlazor", "DemoProjectBlazor\DemoProjectBlazor\DemoProjectBlazor.csproj", "{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProjectBlazor.Client", "DemoProjectBlazor\DemoProjectBlazor.Client\DemoProjectBlazor.Client.csproj", "{0189F1B2-91ED-4A09-A5DC-A55465057131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoProjectBlazor.Client", "DemoProjectBlazor\DemoProjectBlazor.Client\DemoProjectBlazor.Client.csproj", "{0189F1B2-91ED-4A09-A5DC-A55465057131}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoProjectBlazor.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cuuSinhVien")]
     [ApiController]
     public class CuuSinhVienController : Controller
     {
@@ -18,11 +18,11 @@ namespace DemoProjectBlazor.Controllers
             dataSinhVien = data;
         }
 
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> GetAlumni()
-        //{
-        //    return await dataSinhVien.AlumniCuuSv.ToListAsync();
-        //}
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> GetAlumni()
+        {
+            return await dataSinhVien.AlumniCuuSvs.ToListAsync();
+        }
         public IActionResult Index()
         {
             return View();

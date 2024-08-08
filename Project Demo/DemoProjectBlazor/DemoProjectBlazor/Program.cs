@@ -9,8 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DemoProjectDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Thêm các dịch vụ cho Blazor WebAssembly với chế độ render tương tác
+builder.Services.AddRazorComponents()
+    .AddInteractiveWebAssemblyComponents();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,7 +26,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
