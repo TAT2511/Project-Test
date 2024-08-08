@@ -1,4 +1,5 @@
 ﻿@page "/index"
+@using static System.Net.WebRequestMethods
 @rendermode InteractiveWebAssembly
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
@@ -7,7 +8,161 @@
 <h2>
 	<span style="margin-right: 5px;"><button class="button-search-hide"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
 </h2>
+<form method="get" action="Filter">
 
+	<div class="filter-section">
+		<div class="filter-column">
+			<label class="dropdown-label">Giới Tính:</label>
+			<select id="GioiTinh" name="sex" class="form-control">
+				<option value="">-- Chọn Giới Tính --</option>
+				<option value="M">Nam</option>
+				<option value="F">Nữ</option>
+			</select>
+		</div>
+
+		@* <div class="filter-column">
+		<label class="dropdown-label">Loại Quyết Định:</label>
+		<select id="LoaiQuyetDinh" name="LoaiQuyetDinh" class="form-control">
+		<option value="">-- Chọn Loại Quyết Định --</option>
+		@if (ViewBag.QuyetDinhDaoTaoList != null)
+		{
+		var quyetDinhSet = new HashSet<string>();
+		foreach (var quyetDinhDaoTao in ViewBag.QuyetDinhDaoTaoList as List<DemoProject.Models.Alumni_QuyetDinhDaoTao>)
+		{
+		if (!quyetDinhSet.Contains(quyetDinhDaoTao.LoaiQuyetDinh))
+		{
+		quyetDinhSet.Add(quyetDinhDaoTao.LoaiQuyetDinh);
+		<option value="@quyetDinhDaoTao.LoaiQuyetDinh" @(quyetDinhDaoTao.LoaiQuyetDinh= =ViewBag.SelectedQuyetDinh ? "selected" : "" )>@quyetDinhDaoTao.LoaiQuyetDinh</option>
+		}
+		}
+		}
+		</select>
+		</div>
+
+		<div class="filter-column">
+		<label class="dropdown-label">Năm Học:</label>
+		<select id="NamHoc" name="NamHoc" class="form-control">
+		<option value="">-- Chọn Năm Học --</option>
+		@if (ViewBag.QuyetDinhDaoTaoList != null)
+		{
+		var namHocSet = new HashSet<string>();
+		foreach (var quyetDinhDaoTao in ViewBag.QuyetDinhDaoTaoList as List<DemoProject.Models.Alumni_QuyetDinhDaoTao>)
+		{
+		if (!namHocSet.Contains(quyetDinhDaoTao.NamHoc))
+		{
+		namHocSet.Add(quyetDinhDaoTao.NamHoc);
+		<option value="@quyetDinhDaoTao.NamHoc" @(quyetDinhDaoTao.NamHoc= =ViewBag.SelectedNamHoc ? "selected" : "" )>@quyetDinhDaoTao.NamHoc</option>
+		}
+		}
+		}
+		</select>
+		</div>
+
+		<div class="filter-column">
+		<label class="dropdown-label">Tên Ngành Học:</label>
+		<select id="TenNganhHoc" name="TenNganhHoc" class="form-control">
+		<option value="">-- Chọn Ngành Học --</option>
+		@if (ViewBag.ThongTinDaoTaoList != null)
+		{
+		var nganhHocSet = new HashSet<string>();
+		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+		{
+		if (!nganhHocSet.Contains(thongTinDaoTao.TenNganhHoc))
+		{
+		nganhHocSet.Add(thongTinDaoTao.TenNganhHoc);
+		<option value="@thongTinDaoTao.TenNganhHoc" @(thongTinDaoTao.TenNganhHoc= =ViewBag.SelectedNganhHoc ? "selected" : "" )>@thongTinDaoTao.TenNganhHoc</option>
+		}
+		}
+		}
+		</select>
+		</div>
+
+		<div class="filter-column">
+		<label class="dropdown-label">Tên Khóa Học:</label>
+		<select id="TenKhoaHoc" name="TenKhoaHoc" class="form-control">
+		<option value="">-- Chọn Khóa Học --</option>
+		@if (ViewBag.ThongTinDaoTaoList != null)
+		{
+		var khoaHocSet = new HashSet<string>();
+		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+		{
+		if (!khoaHocSet.Contains(thongTinDaoTao.TenKhoaHoc))
+		{
+		khoaHocSet.Add(thongTinDaoTao.TenKhoaHoc);
+		<option value="@thongTinDaoTao.TenKhoaHoc" @(thongTinDaoTao.TenKhoaHoc= =ViewBag.SelectedKhoaHoc ? "selected" : "" )>@thongTinDaoTao.TenKhoaHoc</option>
+		}
+		}
+		}
+		</select>
+		</div>
+
+		<div class="filter-column">
+		<label class="dropdown-label">Tên Niên Khóa:</label>
+		<select id="TenNienKhoa" name="TenNienKhoa" class="form-control">
+		<option value="">-- Niên Khóa --</option>
+		@if (ViewBag.ThongTinDaoTaoList != null)
+		{
+		var nienKhoaSet = new HashSet<string>();
+		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
+		{
+		if (!nienKhoaSet.Contains(thongTinDaoTao.NienKhoa))
+		{
+		nienKhoaSet.Add(thongTinDaoTao.NienKhoa);
+		<option value="@thongTinDaoTao.NienKhoa" @(thongTinDaoTao.NienKhoa= =ViewBag.SelectedNienKhoa ? "selected" : "" )>@thongTinDaoTao.NienKhoa</option>
+		}
+		}
+		}
+		</select>
+		</div> *@
+
+		<div class="filter-column">
+			<label class="dropdown-label">Tìm kiếm:</label>
+			<input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+		</div>
+
+		<div class="button-search-container">
+			<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
+			<a href="" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
+			<button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+		</div>
+	</div>
+</form>
+
+<table class="table">
+	<tr>
+		<th><input type="checkbox" id="selectAll"></th>
+		<th>Mã số sinh viên</th>
+		<th>Họ tên cựu sinh viên</th>
+		<th>Mã định danh</th>
+		<th>Giới tính</th>
+		<th>Số điện thoại</th>
+		<th>Địa chỉ liên hệ</th>
+		<th>Ngày sinh</th>
+		<th>Chức năng</th>
+	</tr>
+	@foreach (var alumni in alumniList)
+	{
+		<tr>
+			<td>@alumni.MaSoSv</td>
+			<td>@alumni.HoCuuSv</td>
+			<td>@alumni.MaDinhDanh</td>
+			<td>@alumni.GioiTinh</td>
+			<td>@alumni.SoDienThoai</td>
+			<td>@alumni.DiaChiLienHe</td>
+			<td>@alumni.NgaySinh</td>
+			<td>
+				<a href="" class="button"><i class="fas fa-pencil-alt"></i></a> |
+				<a href="" class="button"><i class="fas fa-user"></i></a>
+				<button @onclick="() => DeleteItem(alumni.Id)" class="button delete-button"><i class="fas fa-trash"></i></button>
+			</td>
+		</tr>
+	}
+</table>
 @code {
+	List<AlumniCuuSv> alumniList;
 
+	protected override async Task OnInitializedAsync()
+	{
+		alumniList = await Http.GetFromJsonAsync<List<AlumniCuuSv>>("api/index");
+	}
 }

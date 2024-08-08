@@ -84,9 +84,11 @@
 
 .filter-section {
     display: flex;
+    padding: 20px;
+    border:1px solid black;
     flex-wrap: wrap;
     margin-bottom: 10px;
-    justify-content: space-between; /* Đẩy các cột ra xa nhau */
+    justify-content: space-between;
 }
 
 .filter-column {

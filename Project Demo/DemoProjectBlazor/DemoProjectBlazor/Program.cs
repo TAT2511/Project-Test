@@ -1,5 +1,6 @@
 ﻿using DemoProject.Server.Models;
 using DemoProjectBlazor.Client.Pages;
+using DemoProjectBlazor.Share;
 using DemoProjectBlazor.Components;
 using Microsoft.EntityFrameworkCore;
 
