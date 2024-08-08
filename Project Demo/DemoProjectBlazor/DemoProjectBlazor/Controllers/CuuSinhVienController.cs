@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoProjectBlazor.Controllers
 {
-    [Route("api/index")]
+    [Route("api/cuuSinhVien")]
     [ApiController]
     public class CuuSinhVienController : Controller
     {
@@ -22,7 +22,7 @@ namespace DemoProjectBlazor.Controllers
         {
 			return await dataSinhVien.AlumniCuuSvs.ToListAsync();
 		}
-		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index(int? page)
+		public Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index(int? page)
         {
 			var CuuSV = dataSinhVien.AlumniCuuSvs.Include("Alumni_ThongTinDaoTao").Include("Alumni_QuyetDinhDaoTao").ToList();
 
@@ -46,22 +46,22 @@ namespace DemoProjectBlazor.Controllers
 			ViewBag.TotalItems = totalItems;
 			ViewBag.PageSize = pageSize;
 
-			return View();
+			return Task.FromResult<ActionResult<IEnumerable<AlumniCuuSv>>>(View());
 		}
 
-		[HttpPost]
-		[Route("delete/{id}")]
-		public async Task<ActionResult> DeleteAlumni(Guid? id)
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> DeleteAlumni(Guid id)
 		{
-			var alumni = await dataSinhVien.AlumniCuuSvs.FindAsync(id);
-			if (alumni == null)
+			var cuuSV = await dataSinhVien.AlumniCuuSvs.FindAsync(id);
+			if (cuuSV == null)
 			{
 				return NotFound();
 			}
-			dataSinhVien.AlumniCuuSvs.Remove(alumni);
+
+			dataSinhVien.AlumniCuuSvs.Remove(cuuSV);
 			await dataSinhVien.SaveChangesAsync();
 
-			return NoContent(); // Trả về mã trạng thái 204 No Content nếu xóa thành công
+			return NoContent();
 		}
 	}
 }
