@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoProjectBlazor", "DemoPr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoProjectBlazor.Client", "DemoProjectBlazor\DemoProjectBlazor.Client\DemoProjectBlazor.Client.csproj", "{0189F1B2-91ED-4A09-A5DC-A55465057131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProjectBlazor.Share", "DemoProjectBlazor.Share\DemoProjectBlazor.Share.csproj", "{73F2939A-43C5-4671-966B-46FD0F86D7F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoProjectBlazor.Share", "DemoProjectBlazor.Share\DemoProjectBlazor.Share.csproj", "{73F2939A-43C5-4671-966B-46FD0F86D7F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

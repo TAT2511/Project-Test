@@ -6,129 +6,59 @@
 
 <PageTitle>Index</PageTitle>
 
-<h2>
-	<span style="margin-right: 5px;"><button class="button-search-hide"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
-</h2>
-<form method="get" action="Filter">
-
-	<div class="filter-section">
-		<div class="filter-column">
-			<label class="dropdown-label">Giới Tính:</label>
-			<select id="GioiTinh" name="sex" class="form-control">
-				<option value="">-- Chọn Giới Tính --</option>
-				<option value="M">Nam</option>
-				<option value="F">Nữ</option>
-			</select>
-		</div>
-
-		@* <div class="filter-column">
-		<label class="dropdown-label">Loại Quyết Định:</label>
-		<select id="LoaiQuyetDinh" name="LoaiQuyetDinh" class="form-control">
-		<option value="">-- Chọn Loại Quyết Định --</option>
-		@if (ViewBag.QuyetDinhDaoTaoList != null)
-		{
-		var quyetDinhSet = new HashSet<string>();
-		foreach (var quyetDinhDaoTao in ViewBag.QuyetDinhDaoTaoList as List<DemoProject.Models.Alumni_QuyetDinhDaoTao>)
-		{
-		if (!quyetDinhSet.Contains(quyetDinhDaoTao.LoaiQuyetDinh))
-		{
-		quyetDinhSet.Add(quyetDinhDaoTao.LoaiQuyetDinh);
-		<option value="@quyetDinhDaoTao.LoaiQuyetDinh" @(quyetDinhDaoTao.LoaiQuyetDinh= =ViewBag.SelectedQuyetDinh ? "selected" : "" )>@quyetDinhDaoTao.LoaiQuyetDinh</option>
-		}
-		}
-		}
-		</select>
-		</div>
-
-		<div class="filter-column">
-		<label class="dropdown-label">Năm Học:</label>
-		<select id="NamHoc" name="NamHoc" class="form-control">
-		<option value="">-- Chọn Năm Học --</option>
-		@if (ViewBag.QuyetDinhDaoTaoList != null)
-		{
-		var namHocSet = new HashSet<string>();
-		foreach (var quyetDinhDaoTao in ViewBag.QuyetDinhDaoTaoList as List<DemoProject.Models.Alumni_QuyetDinhDaoTao>)
-		{
-		if (!namHocSet.Contains(quyetDinhDaoTao.NamHoc))
-		{
-		namHocSet.Add(quyetDinhDaoTao.NamHoc);
-		<option value="@quyetDinhDaoTao.NamHoc" @(quyetDinhDaoTao.NamHoc= =ViewBag.SelectedNamHoc ? "selected" : "" )>@quyetDinhDaoTao.NamHoc</option>
-		}
-		}
-		}
-		</select>
-		</div>
-
-		<div class="filter-column">
-		<label class="dropdown-label">Tên Ngành Học:</label>
-		<select id="TenNganhHoc" name="TenNganhHoc" class="form-control">
-		<option value="">-- Chọn Ngành Học --</option>
-		@if (ViewBag.ThongTinDaoTaoList != null)
-		{
-		var nganhHocSet = new HashSet<string>();
-		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
-		{
-		if (!nganhHocSet.Contains(thongTinDaoTao.TenNganhHoc))
-		{
-		nganhHocSet.Add(thongTinDaoTao.TenNganhHoc);
-		<option value="@thongTinDaoTao.TenNganhHoc" @(thongTinDaoTao.TenNganhHoc= =ViewBag.SelectedNganhHoc ? "selected" : "" )>@thongTinDaoTao.TenNganhHoc</option>
-		}
-		}
-		}
-		</select>
-		</div>
-
-		<div class="filter-column">
-		<label class="dropdown-label">Tên Khóa Học:</label>
-		<select id="TenKhoaHoc" name="TenKhoaHoc" class="form-control">
-		<option value="">-- Chọn Khóa Học --</option>
-		@if (ViewBag.ThongTinDaoTaoList != null)
-		{
-		var khoaHocSet = new HashSet<string>();
-		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
-		{
-		if (!khoaHocSet.Contains(thongTinDaoTao.TenKhoaHoc))
-		{
-		khoaHocSet.Add(thongTinDaoTao.TenKhoaHoc);
-		<option value="@thongTinDaoTao.TenKhoaHoc" @(thongTinDaoTao.TenKhoaHoc= =ViewBag.SelectedKhoaHoc ? "selected" : "" )>@thongTinDaoTao.TenKhoaHoc</option>
-		}
-		}
-		}
-		</select>
-		</div>
-
-		<div class="filter-column">
-		<label class="dropdown-label">Tên Niên Khóa:</label>
-		<select id="TenNienKhoa" name="TenNienKhoa" class="form-control">
-		<option value="">-- Niên Khóa --</option>
-		@if (ViewBag.ThongTinDaoTaoList != null)
-		{
-		var nienKhoaSet = new HashSet<string>();
-		foreach (var thongTinDaoTao in ViewBag.ThongTinDaoTaoList as List<DemoProject.Models.Alumni_ThongTinDaoTao>)
-		{
-		if (!nienKhoaSet.Contains(thongTinDaoTao.NienKhoa))
-		{
-		nienKhoaSet.Add(thongTinDaoTao.NienKhoa);
-		<option value="@thongTinDaoTao.NienKhoa" @(thongTinDaoTao.NienKhoa= =ViewBag.SelectedNienKhoa ? "selected" : "" )>@thongTinDaoTao.NienKhoa</option>
-		}
-		}
-		}
-		</select>
-		</div> *@
-
-		<div class="filter-column">
-			<label class="dropdown-label">Tìm kiếm:</label>
-			<input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
-		</div>
-
-		<div class="button-search-container">
-			<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
-			<a href="" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
-			<button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+@if (isDeleting)
+{
+	<div class="modal fade show" style="display:block;" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Confirmation</h5>
+					<button @onclick="CancelDelete" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Bạn có chắc muốn xóa sinh viên này?</p>
+				</div>
+				<div class="modal-footer">
+					<button @onclick="() => Delete()" type="button" class="btn btn-danger">Có</button>
+					<button @onclick="CancelDelete" type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+				</div>
+			</div>
 		</div>
 	</div>
-</form>
+}
 
+<h2>
+	<span style="margin-right: 5px;"><button class="button-search-hide" @onclick="ToggleSearchForm"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
+</h2>
+
+@if (isSearchFormOpen)
+{
+	<form method="get" action="Filter">
+		<div class="filter-section">
+			<div class="filter-column">
+				<label class="dropdown-label">Giới Tính:</label>
+				<select id="GioiTinh" name="sex" class="form-control">
+					<option value="">-- Chọn Giới Tính --</option>
+					<option value="M">Nam</option>
+					<option value="F">Nữ</option>
+				</select>
+			</div>
+
+			<div class="filter-column">
+				<label class="dropdown-label">Tìm kiếm:</label>
+				<input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+			</div>
+
+			<div class="button-search-container">
+				<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
+				<a href="" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
+				<button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+			</div>
+		</div>
+	</form>
+}
 <table class="table">
 	<tr>
 		<th><input type="checkbox" id="selectAll"></th>
@@ -154,21 +84,23 @@
 			<td>@item.NgaySinh</td>
 			<td>
 				<a href="" class="button"><i class="fas fa-pencil-alt"></i></a> |
-				<a href="" class="button"><i class="fas fa-user"></i></a>
+				<a href="" class="button"><i class="fas fa-user"></i></a> |
 				<button @onclick="() => ConfirmDelete(item.Id)" class="button delete-button">
-					<i class="fas fa-trash"></i> Delete
+					<i class="fas fa-trash"></i>
 				</button>
 			</td>
 		</tr>
 	}
 </table>
-
-@if (isDeleting)
+<!-- Nút chuyển trang -->
+@if (TotalPages > 1)
 {
-	<div class="alert alert-warning" role="alert">
-		<p>Are you sure you want to delete this item?</p>
-		<button @onclick="() => DeleteAlumni()" class="btn btn-danger">Yes</button>
-		<button @onclick="CancelDelete" class="btn btn-secondary">No</button>
+	<div>
+		@for (int i = 1; i <= TotalPages; i++)
+		{
+			<button @onclick="() => LoadPage(i)" class="@(i == CurrentPage ? "active" : "")">@i</button>
+		}
 	</div>
 }
+
 
