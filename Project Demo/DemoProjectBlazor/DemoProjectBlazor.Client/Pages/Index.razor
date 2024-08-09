@@ -83,8 +83,8 @@
 			<td>@item.DiaChiLienHe</td>
 			<td>@item.NgaySinh</td>
 			<td>
-				<a href="" class="button"><i class="fas fa-pencil-alt"></i></a> |
-				<a href="" class="button"><i class="fas fa-user"></i></a> |
+				<a href="create" class="button"><i class="fas fa-pencil-alt"></i></a> |
+				<a href="EditStudent?id=@item.Id" class="button"><i class="fas fa-user"></i></a> |
 				<button @onclick="() => ConfirmDelete(item.Id)" class="button delete-button">
 					<i class="fas fa-trash"></i>
 				</button>
@@ -96,10 +96,14 @@
 @if (TotalPages > 1)
 {
 	<div>
+		<button @onclick="() => LoadPage(1)">&lt;&lt;</button> 
+		<button @onclick="() => LoadPage(CurrentPage - 1)">&lt;</button>
 		@for (int i = 1; i <= TotalPages; i++)
 		{
 			<button @onclick="() => LoadPage(i)" class="@(i == CurrentPage ? "active" : "")">@i</button>
 		}
+		<button @onclick="() => LoadPage(CurrentPage + 1)">&gt;</button> 
+		<button @onclick="() => LoadPage(TotalPages)">&gt;&gt;</button> 
 	</div>
 }
 

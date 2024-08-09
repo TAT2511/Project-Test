@@ -6,8 +6,8 @@ namespace DemoProjectBlazor.Client.Pages
 	public partial class Index
 	{
 		private List<AlumniCuuSv> dsCuuSinhVien = new List<AlumniCuuSv>();
-		private List<AlumniThongTinDaoTao> ThongTinDaoTaoList = new List<AlumniThongTinDaoTao>();; 
-		private List<AlumniQuyetDinhDaoTao> QuyetDinhDaoTaoList = new List<AlumniQuyetDinhDaoTao>();;
+		private List<AlumniThongTinDaoTao> ThongTinDaoTaoList = new List<AlumniThongTinDaoTao>(); 
+		private List<AlumniQuyetDinhDaoTao> QuyetDinhDaoTaoList = new List<AlumniQuyetDinhDaoTao>();
 		int CurrentPage = 1;
 		int PageSize = 10;
 		int TotalItems;

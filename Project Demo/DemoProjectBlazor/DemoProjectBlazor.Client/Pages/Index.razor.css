@@ -41,11 +41,14 @@
     transition: background-color 0.3s;
 }
 
+    .button.active {
+        background-color: #007bff;
+        color: white;
+    }
+
     .button:hover {
         background-color: #00ffff;
     }
-
-
 
 /*Icon list*/
 .button-search-hide {
