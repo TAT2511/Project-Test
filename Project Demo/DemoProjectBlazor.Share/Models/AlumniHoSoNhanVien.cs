@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// quản lý thông tin hồ sơ của giảng viên / nhân viên tại 1 trường cụ thể

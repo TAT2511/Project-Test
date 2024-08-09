@@ -1,12 +1,12 @@
-﻿using DemoProject.Server.Models;
-using DemoProjectBlazor.Client.Pages;
+﻿using DemoProjectBlazor.Client.Pages;
 using DemoProjectBlazor.Components;
 using Microsoft.EntityFrameworkCore;
+using DemoProjectBlazor.Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Thêm dịch vụ DbContext với chuỗi kết nối từ appsettings.json
-builder.Services.AddDbContext<DemoProjectDbContext>(options =>
+builder.Services.AddDbContext<DemoProjectBlazorDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Thêm các dịch vụ cho Blazor WebAssembly với chế độ render tương tác

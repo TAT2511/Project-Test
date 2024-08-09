@@ -1,29 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DemoProject.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using DemoProjectBlazor.Server.Data;
 
 namespace DemoProjectBlazor.Controllers
 {
-    [Route("api/cuuSinhVien")]
-    [ApiController]
-    public class CuuSinhVienController : Controller
-    {
-        private readonly DemoProjectDbContext dataSinhVien;
+	[Route("api/cuuSinhVien")]
+	[ApiController]
+	public class CuuSinhVienController : Controller
+	{
+		private readonly DemoProjectBlazorDBContext dataSinhVien;
 
-        public CuuSinhVienController(DemoProjectDbContext data)
-        {
-            dataSinhVien = data;
-        }
+		public CuuSinhVienController(DemoProjectBlazorDBContext data)
+		{
+			dataSinhVien = data;
+		}
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index()
-        {
+		{
 			return await dataSinhVien.AlumniCuuSvs.ToListAsync();
 		}
 		public Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index(int? page)
-        {
+		{
 			var CuuSV = dataSinhVien.AlumniCuuSvs.Include("Alumni_ThongTinDaoTao").Include("Alumni_QuyetDinhDaoTao").ToList();
 
 			int pageSize = 5; // Số lượng phần tử trên mỗi trang

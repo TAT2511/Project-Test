@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// danh sách các trường có triển khai hệ thống theo dấu SV tốt nghiệp

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// &quot;01&quot; - Thi tuyển

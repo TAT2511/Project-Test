@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// 1: hiện vật

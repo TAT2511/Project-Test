@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// quản lý quyền truy cập của tài khoản vào các trường trưc thuộc

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// Các đơn vị hành chính thuộc về 1 đơn vị hành chính khác thì sẽ có giá trị đơn vị hành chính cha (VD: tỉnh thành phố -&gt; quận huyện, quận huyện -&gt; xã phường)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DemoProject.Server.Models;
+namespace DemoProjectBlazor.Server.Data;
 
 /// <summary>
 /// Quản lý danh sách các loại đơn vị hành chính: tỉnh, thành, phố, quận, huyện, xã, phường
