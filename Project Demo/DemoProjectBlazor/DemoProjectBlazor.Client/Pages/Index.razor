@@ -53,7 +53,7 @@
 
 			<div class="button-search-container">
 				<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
-				<a href="" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
+				<a href="create" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
 				<button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
 			</div>
 		</div>
@@ -83,8 +83,8 @@
 			<td>@item.DiaChiLienHe</td>
 			<td>@item.NgaySinh</td>
 			<td>
-				<a href="create" class="button"><i class="fas fa-pencil-alt"></i></a> |
-				<a href="EditStudent?id=@item.Id" class="button"><i class="fas fa-user"></i></a> |
+				<a href="Edit?id=@item.Id" class="button"><i class="fas fa-pencil-alt"></i></a> |
+				<a href="" class="button"><i class="fas fa-user"></i></a> |
 				<button @onclick="() => ConfirmDelete(item.Id)" class="button delete-button">
 					<i class="fas fa-trash"></i>
 				</button>
@@ -92,19 +92,21 @@
 		</tr>
 	}
 </table>
+
 <!-- Nút chuyển trang -->
 @if (TotalPages > 1)
 {
-	<div>
-		<button @onclick="() => LoadPage(1)">&lt;&lt;</button> 
+	<div class="pagination-container">
+		<button @onclick="() => LoadPage(1)">&lt;&lt;</button>
 		<button @onclick="() => LoadPage(CurrentPage - 1)">&lt;</button>
 		@for (int i = 1; i <= TotalPages; i++)
 		{
 			<button @onclick="() => LoadPage(i)" class="@(i == CurrentPage ? "active" : "")">@i</button>
 		}
-		<button @onclick="() => LoadPage(CurrentPage + 1)">&gt;</button> 
-		<button @onclick="() => LoadPage(TotalPages)">&gt;&gt;</button> 
+		<button @onclick="() => LoadPage(CurrentPage + 1)">&gt;</button>
+		<button @onclick="() => LoadPage(TotalPages)">&gt;&gt;</button>
 	</div>
 }
+
 
 

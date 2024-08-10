@@ -1,63 +1,17 @@
 ﻿@page "/create"
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 
+<PageTitle>Thêm Sinh Viên</PageTitle>
 
-<h3>Create</h3>
-@if (isSubmitted)
-{
-	<p class="text-success">Sinh viên đã được thêm thành công!</p>
-}
-else
-{
-	<form @onsubmit="CreateSV">
-		<label>Tỉnh/Thành phố:</label>
-		<select @bind="selectedTruongId">
-			@foreach (var truong in danhSachTruong)
-			{
-				<option value="@truong.Id">@truong.TenTruong</option>
-			}
-		</select>
+<h3>Thêm Sinh Viên</h3>
 
-		<div class="form-group">
-			<label for="MaSoSV">Mã số SV:</label>
-			<input type="text" @bind="sv.MaSoSv" class="form-control" />
-		</div>
-
-		<button type="submit" class="btn btn-primary">Submit</button>
-		<a href="index" class="btn btn-primary">Trở lại</a>
-	</form>
-}
+	@* <div class="form-group">
+		<label for="MaSoSv">Mã số sinh viên:</label>
+		<InputText id="MaSoSv" class="form-control" @bind-Value="createSV.MaSoSv" />
+	</div> *@
 
 @code {
-	private AlumniCuuSv sv = new AlumniCuuSv();
-	private List<AlumniThongTinTruong> danhSachTruong = new List<AlumniThongTinTruong>(); // Danh sách trường lấy từ controller
-	private Guid selectedTruongId;
-	private bool isSubmitted = false;
 
-	protected override async Task OnInitializedAsync()
-	{
-		var danhSachTruong = await Http.GetFromJsonAsync<List<AlumniThongTinTruong>>("api/create");
-		var danhSachQuanHuyen = await Http.GetFromJsonAsync<List<AlumniThongTinTruong>>("api/create");
-		var danhSachTinh = await Http.GetFromJsonAsync<List<AlumniThongTinTruong>>("api/create");
-		var danhSachXaPhuong = await Http.GetFromJsonAsync<List<AlumniThongTinTruong>>("api/create");
-		// var CuuSVList = await Http.GetFromJsonAsync<List<AlumniCuuSv>>("api/create");
-		// danhSachTruong = CuuSVList ?? new List<AlumniCuuSv>();
-	}
-
-	private async Task CreateSV()
-	{
-		sv.TruongId = selectedTruongId;
-
-		var response = await Http.PostAsJsonAsync("api/cuuSinhVien", sv); // Thay đổi đường dẫn API để gửi dữ liệu sinh viên
-
-		if (response.IsSuccessStatusCode)
-		{
-			isSubmitted = true;
-		}
-		else
-		{
-			// Xử lý khi có lỗi xảy ra khi thêm sinh viên
-		}
-	}
 }

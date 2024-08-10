@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DemoProjectBlazor.Server.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using static DemoProjectBlazor.Client.Pages.Create;
 
 namespace DemoProjectBlazor.Controllers
 {
@@ -11,101 +12,48 @@ namespace DemoProjectBlazor.Controllers
 	[ApiController]
 	public class CuuSinhVienController : Controller
 	{
-		private readonly DemoProjectBlazorDBContext dataSinhVien;
+		private readonly DemoProjectBlazorDBContext _context;
 
-		public CuuSinhVienController(DemoProjectBlazorDBContext data)
+		public CuuSinhVienController(DemoProjectBlazorDBContext context)
 		{
-			dataSinhVien = data;
+			_context = context;
 		}
+
+		// Phương thức lấy danh sách sinh viên với phân trang
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index()
+		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> GetAlumni([FromQuery] int page = 1, [FromQuery] int pageSize = 5)
 		{
-			return await dataSinhVien.AlumniCuuSvs.ToListAsync();
-		}
-		public Task<ActionResult<IEnumerable<AlumniCuuSv>>> Index(int? page)
-		{
-			var CuuSV = dataSinhVien.AlumniCuuSvs.Include("Alumni_ThongTinDaoTao").Include("Alumni_QuyetDinhDaoTao").ToList();
-
-			int pageSize = 5; // Số lượng phần tử trên mỗi trang
-			int pageNumber = page ?? 1;
-			int totalItems = CuuSV.Count();
-
-			// Tính toán số trang và giới hạn trang hiện tại
-			int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
-			pageNumber = Math.Max(1, Math.Min(pageNumber, totalPages));
-
-			var pagedSinhViens = CuuSV.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
-
-			//ViewBag thông tin sinh viên
-			ViewBag.SinhViens = pagedSinhViens;
-			ViewBag.ThongTinDaoTaoList = dataSinhVien.AlumniThongTinDaoTaos.ToList(); ;
-			ViewBag.QuyetDinhDaoTaoList = dataSinhVien.AlumniQuyetDinhDaoTaos.ToList(); ;
-
-			ViewBag.CurrentPage = pageNumber;
-			ViewBag.TotalPages = totalPages;
-			ViewBag.TotalItems = totalItems;
-			ViewBag.PageSize = pageSize;
-
-			return Task.FromResult<ActionResult<IEnumerable<AlumniCuuSv>>>(View());
+			var dsCuuSinhVien = await _context.AlumniCuuSvs
+											  .Skip((page - 1) * pageSize)
+											  .Take(pageSize)
+											  .ToListAsync();
+			return Ok(dsCuuSinhVien);
 		}
 
+		// Phương thức lấy tổng số lượng sinh viên
+		[HttpGet("count")]
+		public async Task<ActionResult<int>> GetCount()
+		{
+			var count = await _context.AlumniCuuSvs.CountAsync();
+			return Ok(count);
+		}
+
+		// Phương thức xóa sinh viên
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteAlumni(Guid id)
 		{
-			var cuuSV = await dataSinhVien.AlumniCuuSvs.FindAsync(id);
+			var cuuSV = await _context.AlumniCuuSvs.FindAsync(id);
 			if (cuuSV == null)
 			{
 				return NotFound();
 			}
 
-			dataSinhVien.AlumniCuuSvs.Remove(cuuSV);
-			await dataSinhVien.SaveChangesAsync();
+			_context.AlumniCuuSvs.Remove(cuuSV);
+			await _context.SaveChangesAsync();
 
 			return NoContent();
 		}
 
-		public ActionResult Create()
-		{
-			// Lấy danh sách Tỉnh/Thành phố và truyền vào ViewBag
-			var danhSachTinh = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachTinh = new SelectList(danhSachTinh, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách Quận/Huyện và truyền vào ViewBag
-			var danhSachQuanHuyen = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachQuanHuyen = new SelectList(danhSachQuanHuyen, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách Xã/Phường và truyền vào ViewBag
-			var danhSachXaPhuong = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachXaPhuong = new SelectList(danhSachXaPhuong, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách TruongIdList từ ViewBag và giá trị MaTruong từ Alumni_ThongTinTruong
-			List<AlumniThongTinTruong> truongIdList = dataSinhVien.AlumniThongTinTruongs.ToList();
-			ViewBag.TruongIdList = new SelectList(truongIdList, "Id", "TenTruong");
-
-			// Lấy danh sách QuocGiaIdList từ ViewBag và giá trị MaQuocGia từ Alumni_QuocGia
-			List<AlumniQuocGium> quocGiaList = dataSinhVien.AlumniQuocGia.ToList();
-			ViewBag.QuocGiaIdList = new SelectList(quocGiaList, "ID", "TenQuocGia");
-
-			return View();
-		}
 
 		// POST: CuuSinhVien/Create
 		[HttpPost]
@@ -118,10 +66,10 @@ namespace DemoProjectBlazor.Controllers
 					string randomGuid = Guid.NewGuid().ToString();
 					sv.Id = new Guid(randomGuid);
 
-					dataSinhVien.AlumniCuuSvs.Add(sv);
-					await dataSinhVien.SaveChangesAsync();
+					_context.AlumniCuuSvs.Add(sv);
+                    await _context.SaveChangesAsync();
 
-					return Ok(sv); // Trả về dữ liệu sinh viên đã được tạo thành công
+                    return Ok(sv); // Trả về dữ liệu sinh viên đã được tạo thành công
 				}
 				catch (Exception ex)
 				{
@@ -133,45 +81,7 @@ namespace DemoProjectBlazor.Controllers
 		}
 		public ActionResult Edit(Guid id)
 		{
-			// Lấy danh sách Tỉnh/Thành phố và truyền vào ViewBag
-			var danhSachTinh = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachTinh = new SelectList(danhSachTinh, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách Quận/Huyện và truyền vào ViewBag
-			var danhSachQuanHuyen = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachQuanHuyen = new SelectList(danhSachQuanHuyen, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách Xã/Phường và truyền vào ViewBag
-			var danhSachXaPhuong = dataSinhVien.AlumniDonViHanhChinhs.Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
-				.Select(d => new
-				{
-					TenDonViHanhChinh = d.TenDonViHanhChinh,
-					ID = d.Id
-				})
-				.ToList();
-			ViewBag.DanhSachXaPhuong = new SelectList(danhSachXaPhuong, "ID", "TenDonViHanhChinh");
-
-			// Lấy danh sách TruongIdList từ ViewBag và giá trị MaTruong từ Alumni_ThongTinTruong
-			List<AlumniThongTinTruong> truongIdList = dataSinhVien.AlumniThongTinTruongs.ToList();
-			ViewBag.TruongIdList = new SelectList(truongIdList, "Id", "TenTruong");
-
-			// Lấy danh sách QuocGiaIdList từ ViewBag và giá trị MaQuocGia từ Alumni_QuocGia
-			List<AlumniQuocGium> quocGiaList = dataSinhVien.AlumniQuocGia.ToList();
-			ViewBag.QuocGiaIdList = new SelectList(quocGiaList, "ID", "TenQuocGia");
-
-			var alumni_CuuSV = dataSinhVien.AlumniCuuSvs.Include(s => s.AlumniThongTinDaoTaos).Include(s => s.AlumniQuyetDinhDaoTaos).FirstOrDefault(s => s.Id == id);
+			var alumni_CuuSV = _context.AlumniCuuSvs.Include(s => s.AlumniThongTinDaoTaos).Include(s => s.AlumniQuyetDinhDaoTaos).FirstOrDefault(s => s.Id == id);
 			if (alumni_CuuSV == null)
 			{
 				return NotFound();
@@ -183,12 +93,78 @@ namespace DemoProjectBlazor.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				dataSinhVien.Entry(cuuSV).State = EntityState.Modified;
-				await dataSinhVien.SaveChangesAsync();
+				_context.Entry(cuuSV).State = EntityState.Modified;
+				await _context.SaveChangesAsync();
 				return RedirectToAction("Index");
 			}
 
 			return BadRequest(ModelState); // Trả về thông báo lỗi nếu dữ liệu không hợp lệ
+		}
+        [HttpGet("danhSachTinh")]
+        public ActionResult<IEnumerable<Option>> GetDanhSachTinh()
+        {
+            var danhSachTinh = _context.AlumniDonViHanhChinhs
+                .Where(d => d.LoaiDonViHanhChinhId == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
+                .Select(d => new Option
+                {
+                    Text = d.TenDonViHanhChinh,
+                    Value = d.Id.ToString()
+                })
+                .ToList();
+            return Ok(danhSachTinh);
+        }
+
+        [HttpGet("danhSachQuanHuyen")]
+        public ActionResult<IEnumerable<Option>> GetDanhSachQuanHuyen()
+        {
+            var danhSachQuanHuyen = _context.AlumniDonViHanhChinhs
+                .Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
+                .Select(d => new Option
+				{
+                    Text = d.TenDonViHanhChinh,
+                    Value = d.Id.ToString()
+                })
+                .ToList();
+            return Ok(danhSachQuanHuyen);
+        }
+		[HttpGet("danhSachXaPhuong")]
+        public ActionResult<IEnumerable<Option>> GetDanhSachXaPhuong()
+        {
+            var danhSachXaPhuong = _context.AlumniDonViHanhChinhs
+                .Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
+                .Select(d => new Option
+				{
+                    Text = d.TenDonViHanhChinh,
+                    Value = d.Id.ToString()
+                })
+                .ToList();
+            return Ok(danhSachXaPhuong);
+        }
+		[HttpGet("danhSachTruong")]
+		public ActionResult<IEnumerable<Option>> GetDanhSachTruong()
+		{
+			var danhSachTruong = _context.AlumniThongTinTruongs
+				.Select(t => new Option
+				{
+					Text = t.TenTruong,
+					Value = t.Id.ToString()
+				})
+				.ToList();
+
+			return Ok(danhSachTruong);
+		}
+		[HttpGet("danhSachQuocGia")]
+		public ActionResult<IEnumerable<Option>> GetDanhSachQuocGia()
+		{
+			var danhSachQuocGia = _context.AlumniQuocGia
+				.Select(t => new Option
+				{
+					Text = t.TenQuocGia,
+					Value = t.Id.ToString()
+				})
+				.ToList();
+
+			return Ok(danhSachQuocGia);
 		}
 	}
 	public static class GuidGenerator
