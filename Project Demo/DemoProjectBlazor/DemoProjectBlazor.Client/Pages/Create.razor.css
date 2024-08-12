@@ -1,2 +1,56 @@
-﻿body {
+﻿h2{
+    padding:10px;
 }
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        width: 300%;
+        font-weight: bold;
+        padding:5px;
+    }
+
+.form-control {
+    width: 300%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+.back-link {
+    text-decoration: none;
+    color: #333;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+    .back-link:hover {
+        color: #007bff;
+    }

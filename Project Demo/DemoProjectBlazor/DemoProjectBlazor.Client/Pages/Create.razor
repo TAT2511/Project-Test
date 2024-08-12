@@ -1,17 +1,180 @@
 ﻿@page "/create"
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 @inject HttpClient Http
-@inject NavigationManager NavigationManager
+@inject NavigationManager Navigation
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
 <PageTitle>Thêm Sinh Viên</PageTitle>
 
-<h3>Thêm Sinh Viên</h3>
+<h2>Thêm Sinh Viên</h2>
 
-	@* <div class="form-group">
-		<label for="MaSoSv">Mã số sinh viên:</label>
-		<InputText id="MaSoSv" class="form-control" @bind-Value="createSV.MaSoSv" />
-	</div> *@
+
+@if (sv != null)
+{
+	<EditForm Model="@sv" OnValidSubmit="@SaveAlumniCuuSv">
+		<DataAnnotationsValidator />
+		<ValidationSummary />
+		<div class="form-row">
+			<div class="form-group col-3">
+				<label for="TruongId">Trường:</label>
+				<input id="TruongId" class="form-control" @bind="sv.TruongId" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="MaSoSv">Mã số sinh viên:</label>
+				<input id="MaSoSv" class="form-control" @bind="@sv.MaSoSv" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="HoCuuSv">Họ cựu sinh viên:</label>
+				<input id="HoCuuSv" class="form-control" @bind="@sv.HoCuuSv" @oninput="UpdateHoTenCuuSv" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="TenCuuSv">Tên cựu sinh viên:</label>
+				<input id="TenCuuSv" class="form-control" @bind="@sv.TenCuuSv" @oninput="UpdateHoTenCuuSv" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="HoTenCuuSv">Họ tên cựu sinh viên:</label>
+				<input id="HoTenCuuSv" class="form-control" @bind="@sv.HoTenCuuSv" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="MaDinhDanh">Mã định danh:</label>
+				<input id="MaDinhDanh" class="form-control" @bind="sv.MaDinhDanh" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="GioiTinh">Giới tính:</label>
+				<input id="GioiTinh" class="form-control" @bind="sv.GioiTinh" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="Email">Email:</label>
+				<input id="Email" class="form-control" @bind="sv.Email" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="DanToc">Dân tộc:</label>
+				<input id="DanToc" class="form-control" @bind="sv.DanToc" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="TonGiao">Tôn giáo:</label>
+				<input id="TonGiao" class="form-control" @bind="sv.TonGiao" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="QuocGiaId">Quốc gia:</label>
+				<input id="QuocGiaId" class="form-control" @bind="sv.QuocGiaId" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="TinhThanhId">Tỉnh thành:</label>
+				<input id="TinhThanhId" class="form-control" @bind="sv.TinhThanhId" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="QuanHuyenId">Quận Huyện:</label>
+				<input id="QuanHuyenId" class="form-control" @bind="sv.QuanHuyenId" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="XaPhuongId">Xã phường:</label>
+				<input id="XaPhuongId" class="form-control" @bind="sv.XaPhuongId" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="DiaChiLienHe">Địa chỉ liên hệ:</label>
+				<input id="DiaChiLienHe" class="form-control" @bind="sv.DiaChiLienHe" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="HinhAnhDaiDien">Hình ảnh đại diện:</label>
+				<input id="HinhAnhDaiDien" class="form-control" @bind="sv.HinhAnhDaiDien" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="ThamGiaDoan">Tham gia đoàn:</label>
+				<input id="ThamGiaDoan" class="form-control" @bind="sv.ThamGiaDoan" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="NgayVaoDoan">Ngày vào đoàn:</label>
+				<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" type="date" class="form-control" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="ThamGiaDang">Tham gia đảng:</label>
+				<input id="ThamGiaDang" class="form-control" @bind="sv.ThamGiaDang" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="NgayVaoDang">Ngày vào đảng:</label>
+				<input id="NgayVaoDang" @bind="sv.NgayVaoDang" type="date" class="form-control" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="SoDienThoai">Số điện thoại:</label>
+				<input id="SoDienThoai" class="form-control" @bind="sv.SoDienThoai" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="QuocTich">Quốc tịch:</label>
+				<input id="QuocTich" class="form-control" @bind="sv.QuocTich" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="NgaySinh">Ngày sinh:</label>
+				<input id="NgaySinh" @bind="sv.NgaySinh" class="form-control" Format="dd/MM/yyyy" />
+			</div>
+
+			<div class="form-group col-3">
+				<label for="NoiSinh">Nơi sinh:</label>
+				<input id="NoiSinh" class="form-control" @bind="sv.NoiSinh" />
+			</div>
+
+			<div class="button-container">
+				<button type="submit" class="btn btn-primary">Thêm Sinh Viên</button>
+				<a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Trở lại</a>
+			</div>
+		</div>
+	</EditForm>
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+	
+</script>
 
 @code {
+	AlumniCuuSv sv = new AlumniCuuSv();
 
+	private async Task SaveAlumniCuuSv()
+	{
+		if (sv.TruongId == null || sv.TruongId == Guid.Empty)
+		{
+			// Nếu bạn muốn tạo mới TruongId khi nó là null hoặc rỗng.
+			sv.TruongId = Guid.NewGuid();
+		}
+
+		// Gọi API để lưu thông tin AlumniCuuSv
+		var response = await Http.PostAsJsonAsync("api/cuuSinhVien", sv);
+
+		if (response.IsSuccessStatusCode)
+		{
+			Navigation.NavigateTo("/index");
+		}
+		else
+		{
+			var errorContent = await response.Content.ReadAsStringAsync();
+			Console.WriteLine($"Error: {errorContent}");
+		}
+	}
+	private void UpdateHoTenCuuSv()
+	{
+		// Update the full name whenever either the first name or last name changes
+		sv.HoTenCuuSv = $"{sv.HoCuuSv} {sv.TenCuuSv}";
+	}
 }

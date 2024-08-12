@@ -29,6 +29,28 @@
 	</div>
 }
 
+@if (isDeletingSelected)
+{
+	<div class="modal fade show" style="display:block;" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Confirmation</h5>
+					<button @onclick="CancelDeleteSelected" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Bạn có chắc muốn xóa các sinh viên đã chọn?</p>
+				</div>
+				<div class="modal-footer">
+					<button @onclick="ConfirmDeleteSelected" type="button" class="btn btn-danger">Có</button>
+					<button @onclick="CancelDeleteSelected" type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+				</div>
+			</div>
+		</div>
+	</div>
+}
 <h2>
 	<span style="margin-right: 5px;"><button class="button-search-hide" @onclick="ToggleSearchForm"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
 </h2>
@@ -53,15 +75,25 @@
 
 			<div class="button-search-container">
 				<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
-				<a href="create" class="button-search"><i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span></a>
-				<button class="button-search" id="button-delete-selected"><i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span></button>
+				<a href="create" class="button-search">
+					<i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span>
+				</a>
+				<button type="button" @onclick="DeleteSelected" class="button-search" id="button-delete-selected">
+					<i class="fas fa-trash"></i><span style="margin-left: 5px;"> Xóa đã chọn</span>
+				</button>
 			</div>
 		</div>
 	</form>
 }
+<!-- Nút xóa đã chọn nằm ngoài form -->
+@* <div class="button-search-container">
+	<button @onclick="DeleteSelected" class="button-search" id="button-delete-selected">
+		<i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span>
+	</button>
+</div> *@
 <table class="table">
 	<tr>
-		<th><input type="checkbox" id="selectAll"></th>
+		<th><input type="checkbox" id="selectAll" @onchange="ToggleSelectAll"></th>
 		<th>Mã số sinh viên</th>
 		<th>Họ tên cựu sinh viên</th>
 		<th>Mã định danh</th>
@@ -74,11 +106,11 @@
 	@foreach (var item in dsCuuSinhVien)
 	{
 		<tr>
-			<td><input type="checkbox" name="selectedItems" value="@item.Id"></td>
+			<td><input type="checkbox" @onchange="e => ToggleSelection(item.Id, e)" checked="@selectedIds.Contains(item.Id)"></td>
 			<td>@item.MaSoSv</td>
-			<td>@item.HoCuuSv</td>
+			<td>@item.HoTenCuuSv</td>
 			<td>@item.MaDinhDanh</td>
-			<td>@item.GioiTinh</td>
+			<td>@(item.GioiTinh == "M" ? "Nam" : item.GioiTinh == "F" ? "Nữ" : "Không xác định")</td>
 			<td>@item.SoDienThoai</td>
 			<td>@item.DiaChiLienHe</td>
 			<td>@item.NgaySinh</td>

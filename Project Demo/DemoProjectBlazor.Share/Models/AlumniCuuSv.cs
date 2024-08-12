@@ -7,9 +7,10 @@ public partial class AlumniCuuSv
 {
     public Guid Id { get; set; }
 
-    public Guid TruongId { get; set; }
+    public Guid? TruongId { get; set; }
 
-    public string? MaSoSv { get; set; }
+	public virtual AlumniThongTinTruong? Truong { get; set; }
+	public string? MaSoSv { get; set; }
 
     public string HoCuuSv { get; set; } = null!;
 
@@ -100,7 +101,6 @@ public partial class AlumniCuuSv
 
     public virtual AlumniDonViHanhChinh? TinhThanh { get; set; }
 
-    public virtual AlumniThongTinTruong Truong { get; set; } = null!;
 
     public virtual AlumniDonViHanhChinh? XaPhuong { get; set; }
 }
