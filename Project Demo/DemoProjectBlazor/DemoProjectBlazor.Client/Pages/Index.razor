@@ -12,7 +12,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Confirmation</h5>
+					<h5 class="modal-title">Xác nhận xóa sinh viên!!!</h5>
 					<button @onclick="CancelDelete" type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -35,7 +35,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Confirmation</h5>
+					<h5 class="modal-title">Xác nhận xóa nhiều sinh viên</h5>
 					<button @onclick="CancelDeleteSelected" type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -51,6 +51,61 @@
 		</div>
 	</div>
 }
+
+@if (isInfoPopupOpen)
+{
+	<div class="modal fade show" style="display:block;" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="infoModalLabel">Thông Tin Chi Tiết</h5>
+					<button type="button" class="close" @onclick="CloseInfoPopup" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					@if (selectedStudent != null)
+					{
+						<div class="row">
+							<!-- Thông tin sinh viên -->
+							<div class="col-md-4">
+								<h6><strong>Thông Tin Sinh Viên</strong></h6>
+								<p><strong>Mã số sinh viên:</strong> @selectedStudent.MaSoSv</p>
+								<p><strong>Họ tên cựu sinh viên:</strong> @selectedStudent.HoTenCuuSv</p>
+								<p><strong>Mã định danh:</strong> @selectedStudent.MaDinhDanh</p>
+								<p><strong>Giới tính:</strong> @(selectedStudent.GioiTinh == "M" ? "Nam" : selectedStudent.GioiTinh == "F" ? "Nữ" : "Không xác định")</p>
+							</div>
+
+							<!-- Thông tin chi tiết -->
+							<div class="col-md-4">
+								<h6><strong>Thông Tin Chi Tiết</strong></h6>
+								<p><strong>Số điện thoại:</strong> @selectedStudent.SoDienThoai</p>
+								<p><strong>Địa chỉ liên hệ:</strong> @selectedStudent.DiaChiLienHe</p>
+								<p><strong>Ngày sinh:</strong> @selectedStudent.NgaySinh</p>
+								<p><strong>Email:</strong> @selectedStudent.Email</p>
+								<p><strong>Quốc tịch:</strong> @selectedStudent.QuocTich</p>
+							</div>
+
+							<!-- Thông tin thêm -->
+							<div class="col-md-4">
+								<h6><strong>Thông Tin Thêm</strong></h6>
+								<p><strong>Tham gia đoàn:</strong> @selectedStudent.ThamGiaDoan</p>
+								<p><strong>Ngày vào đoàn:</strong> @selectedStudent.NgayVaoDoan?.ToString("dd/MM/yyyy")</p>
+								<p><strong>Tham gia đảng:</strong> @selectedStudent.ThamGiaDang</p>
+								<p><strong>Ngày vào đảng:</strong> @selectedStudent.NgayVaoDang?.ToString("dd/MM/yyyy")</p>
+								<p><strong>Quốc gia:</strong> @selectedStudent.QuocGia</p>
+							</div>
+						</div>
+					}
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" @onclick="CloseInfoPopup">Đóng</button>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
 <h2>
 	<span style="margin-right: 5px;"><button class="button-search-hide" @onclick="ToggleSearchForm"><i class="fas fa-list"></i></button></span>Danh sách cựu sinh viên
 </h2>
@@ -85,12 +140,7 @@
 		</div>
 	</form>
 }
-<!-- Nút xóa đã chọn nằm ngoài form -->
-@* <div class="button-search-container">
-	<button @onclick="DeleteSelected" class="button-search" id="button-delete-selected">
-		<i class="fas fa-trash"></i><span style="margin-left: 5px;">Xóa đã chọn</span>
-	</button>
-</div> *@
+
 <table class="table">
 	<tr>
 		<th><input type="checkbox" id="selectAll" @onchange="ToggleSelectAll"></th>
@@ -116,7 +166,7 @@
 			<td>@item.NgaySinh</td>
 			<td>
 				<a href="Edit?id=@item.Id" class="button"><i class="fas fa-pencil-alt"></i></a> |
-				<a href="" class="button"><i class="fas fa-user"></i></a> |
+				<button @onclick="() => ShowInfoPopup(item.Id)" class="button"><i class="fas fa-user"></i></button> |
 				<button @onclick="() => ConfirmDelete(item.Id)" class="button delete-button">
 					<i class="fas fa-trash"></i>
 				</button>

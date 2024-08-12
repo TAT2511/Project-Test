@@ -3,32 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73F2939A-43C5-4671-966B-46FD0F86D7F1}|DemoProjectBlazor.Share\\DemoProjectBlazor.Share.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor.share\\models\\alumnicuusv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +13,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B60445D5-379D-4CDF-B4FC-CFC9DD645E00}|DemoProjectBlazor\\DemoProjectBlazor\\DemoProjectBlazor.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor\\controllers\\cuusinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\create.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|solutionrelative:demoprojectblazor\\demoprojectblazor.client\\pages\\index.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76B46996-0AEF-4F13-AB12-E33CF596FCBE}|DemoProject\\DemoProject.csproj|solutionrelative:demoproject\\views\\cuusinhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0189F1B2-91ED-4A09-A5DC-A55465057131}|DemoProjectBlazor\\DemoProjectBlazor.Client\\DemoProjectBlazor.Client.csproj|c:\\users\\asus\\pictures\\smartgit\\projectdemopsc\\project demo\\demoprojectblazor\\demoprojectblazor.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -90,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 403,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Document",
@@ -142,13 +142,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "AlumniCuuSv.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor.Share\\Models\\AlumniCuuSv.cs",
               "RelativeDocumentMoniker": "DemoProjectBlazor.Share\\Models\\AlumniCuuSv.cs",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor.Share\\Models\\AlumniCuuSv.cs",
               "RelativeToolTip": "DemoProjectBlazor.Share\\Models\\AlumniCuuSv.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAwwAkAAAAaAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAA2wEAAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T02:01:54.409Z",
               "EditorCaption": ""
@@ -191,13 +191,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Create.razor.css",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor.css",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor.css",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor.css",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor.css",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAADcAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-08-09T08:04:39.657Z",
               "EditorCaption": ""
@@ -216,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
               "RelativeDocumentMoniker": "DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
@@ -224,8 +224,7 @@
               "RelativeToolTip": "DemoProject\\Views\\CuuSinhVien\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-09T03:19:23.079Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T03:19:23.079Z"
             },
             {
               "$type": "Document",
@@ -254,20 +253,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Create.razor",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Create.razor",
-              "ViewState": "AQIAAJkAAAAAAAAAAADwv7IAAAACAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAADwv6wAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-09T03:13:43.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Index.razor.css",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.css",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.css",
@@ -275,31 +274,30 @@
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.css",
               "ViewState": "AQIAALIAAAAAAAAAAAAuwNQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-09T03:11:13.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T03:11:13.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.razor.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.cs",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.cs",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.cs",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAwGYAAAAAAAAA",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-09T03:11:13.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "CuuSinhVienController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor\\Controllers\\CuuSinhVienController.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAkwBEAAAArAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAkwEMAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-09T03:02:30.58Z",
               "EditorCaption": ""
@@ -330,13 +328,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.razor",
               "DocumentMoniker": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor",
               "RelativeDocumentMoniker": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor",
               "ToolTip": "C:\\Users\\ASUS\\Pictures\\SmartGit\\ProjectDemoPSC\\Project Demo\\DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor",
               "RelativeToolTip": "DemoProjectBlazor\\DemoProjectBlazor.Client\\Pages\\Index.razor",
-              "ViewState": "AQIAAFwAAAAAAAAAAADwv24AAAAcAAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAADwv2IAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-09T03:02:03.382Z",
               "EditorCaption": ""

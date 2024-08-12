@@ -55,6 +55,17 @@ namespace DemoProjectBlazor.Controllers
 			return NoContent();
 		}
 
+		//Lấy mã sinh viên
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetById(Guid id)
+		{
+			var student = await _context.AlumniCuuSvs.FindAsync(id);
+			if (student == null)
+			{
+				return NotFound();
+			}
+			return Ok(student);
+		}
 
 		// POST: CuuSinhVien/Create
 		[HttpPost]

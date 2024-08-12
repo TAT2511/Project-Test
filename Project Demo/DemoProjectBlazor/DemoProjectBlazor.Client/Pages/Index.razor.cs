@@ -48,6 +48,8 @@ namespace DemoProjectBlazor.Client.Pages
 		{
 			isSearchFormOpen = !isSearchFormOpen;
 		}
+
+		//Chọn check tất cả checkbox
 		private void ToggleSelectAll(ChangeEventArgs e)
 		{
 			var isChecked = (bool)e.Value;
@@ -78,7 +80,7 @@ namespace DemoProjectBlazor.Client.Pages
 				selectedIds.Remove(id);
 			}
 		}
-
+		//Popup Xóa 1 hay nhiều sinh viên trong checkbox đã chọn
 		private async Task DeleteSelected()
 		{
 			// Kiểm tra nếu không có ID nào được chọn
@@ -113,7 +115,7 @@ namespace DemoProjectBlazor.Client.Pages
 		}
 
 		
-
+		//Popup xóa 1 sinh viên 
 		private async Task Delete()
 		{
 			var response = await Http.DeleteAsync($"api/cuuSinhVien/{itemToDelete}");
@@ -136,6 +138,27 @@ namespace DemoProjectBlazor.Client.Pages
 		private void CancelDelete()
 		{
 			isDeleting = false;
+		}
+		//Popup hiện chi tiết thông tin sinh viên
+		private bool isInfoPopupOpen = false;
+		private AlumniCuuSv selectedStudent;
+
+		private async Task ShowInfoPopup(Guid studentId)
+		{
+			try
+			{
+				selectedStudent = await Http.GetFromJsonAsync<AlumniCuuSv>($"api/cuuSinhVien/{studentId}");
+				isInfoPopupOpen = true;
+			}
+			catch (HttpRequestException ex)
+			{
+				Console.WriteLine($"Lỗi khi lấy thông tin sinh viên: {ex.Message}");
+			}
+		}
+
+		private void CloseInfoPopup()
+		{
+			isInfoPopupOpen = false;
 		}
 	}
 }
