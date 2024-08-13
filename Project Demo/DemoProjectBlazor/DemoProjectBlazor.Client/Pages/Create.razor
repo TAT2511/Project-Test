@@ -22,22 +22,22 @@
 
 			<div class="form-group col-3">
 				<label for="MaSoSv">Mã số sinh viên:</label>
-				<input id="MaSoSv" class="form-control" @bind="@sv.MaSoSv" />
+				<input id="MaSoSv" class="form-control" @bind="sv.MaSoSv" />
 			</div>
 
 			<div class="form-group col-3">
 				<label for="HoCuuSv">Họ cựu sinh viên:</label>
-				<input id="HoCuuSv" class="form-control" @bind="@sv.HoCuuSv" @oninput="UpdateHoTenCuuSv" />
+				<input id="HoCuuSv" class="form-control" @bind="sv.HoCuuSv" @oninput="UpdateHoTenCuuSv" />
 			</div>
 
 			<div class="form-group col-3">
 				<label for="TenCuuSv">Tên cựu sinh viên:</label>
-				<input id="TenCuuSv" class="form-control" @bind="@sv.TenCuuSv" @oninput="UpdateHoTenCuuSv" />
+				<input id="TenCuuSv" class="form-control" @bind="sv.TenCuuSv" @oninput="UpdateHoTenCuuSv" />
 			</div>
 
 			<div class="form-group col-3">
 				<label for="HoTenCuuSv">Họ tên cựu sinh viên:</label>
-				<input id="HoTenCuuSv" class="form-control" @bind="@sv.HoTenCuuSv" />
+				<input id="HoTenCuuSv" class="form-control" @bind="sv.HoTenCuuSv" readonly />
 			</div>
 
 			<div class="form-group col-3">
@@ -47,12 +47,20 @@
 
 			<div class="form-group col-3">
 				<label for="GioiTinh">Giới tính:</label>
-				<input id="GioiTinh" class="form-control" @bind="sv.GioiTinh" />
+				<select id="GioiTinh" class="form-control" @bind="sv.GioiTinh">
+					<option value="">Chọn giới tính</option>
+					<option value="M">Nam</option>
+					<option value="F">Nữ</option>
+				</select>
 			</div>
 
 			<div class="form-group col-3">
 				<label for="Email">Email:</label>
-				<input id="Email" class="form-control" @bind="sv.Email" />
+				<input id="Email" class="form-control" @bind="sv.Email" @oninput="CheckEmail" />
+				@if (!string.IsNullOrWhiteSpace(ValidateEmail(sv.Email)))
+				{
+					<div class="text-errors">@ValidateEmail(sv.Email)</div>
+				}
 			</div>
 
 			<div class="form-group col-3">
@@ -117,7 +125,11 @@
 
 			<div class="form-group col-3">
 				<label for="SoDienThoai">Số điện thoại:</label>
-				<input id="SoDienThoai" class="form-control" @bind="sv.SoDienThoai" />
+				<input id="SoDienThoai" class="form-control" @bind="sv.SoDienThoai" @oninput="CheckPhoneNumber" />
+				@if (!string.IsNullOrWhiteSpace(ValidatePhoneNumber(sv.SoDienThoai)))
+				{
+					<div class="text-errors">@ValidatePhoneNumber(sv.SoDienThoai)</div>
+				}
 			</div>
 
 			<div class="form-group col-3">
@@ -142,23 +154,13 @@
 		</div>
 	</EditForm>
 }
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-	
-</script>
 
 @code {
 	AlumniCuuSv sv = new AlumniCuuSv();
 
 	private async Task SaveAlumniCuuSv()
 	{
-		if (sv.TruongId == null || sv.TruongId == Guid.Empty)
-		{
-			// Nếu bạn muốn tạo mới TruongId khi nó là null hoặc rỗng.
-			sv.TruongId = Guid.NewGuid();
-		}
-
 		// Gọi API để lưu thông tin AlumniCuuSv
 		var response = await Http.PostAsJsonAsync("api/cuuSinhVien", sv);
 
@@ -172,9 +174,80 @@
 			Console.WriteLine($"Error: {errorContent}");
 		}
 	}
+	//Cập nhật họ tên đầy đủ
 	private void UpdateHoTenCuuSv()
 	{
-		// Update the full name whenever either the first name or last name changes
 		sv.HoTenCuuSv = $"{sv.HoCuuSv} {sv.TenCuuSv}";
+	}
+
+	//Báo lỗi cho nhập dữ liệu Email với sđt
+	private bool showEmailWarning = true;
+	private bool isInputStarted = false;
+
+	private void CheckEmail(ChangeEventArgs e)
+	{
+		sv.Email = e.Value?.ToString() ?? string.Empty;
+		isInputStarted = true; // Bắt đầu nhập mới
+		ValidateEmail(sv.Email); // Kiểm tra email khi người dùng nhập
+		StateHasChanged();
+	}
+
+	public string ValidateEmail(string value)
+	{
+		if (isInputStarted) // Chỉ hiển thị cảnh báo khi người dùng bắt đầu nhập mới
+		{
+			if (string.IsNullOrWhiteSpace(value))
+			{
+				showEmailWarning = true; // Hiển thị cảnh báo nếu email để trống
+				return "Vui lòng không để trống email";
+			}
+
+			if (!value.Contains("@"))
+			{
+				showEmailWarning = true; // Hiển thị cảnh báo nếu email không chứa '@'
+				return "Vui lòng nhập email có ký tự '@'";
+			}
+		}
+		else
+		{
+			showEmailWarning = false; // Ẩn cảnh báo nếu người dùng chưa bắt đầu nhập mới
+		}
+
+		return null!;
+	}
+	private string phoneWarningMessage = string.Empty;
+	private bool showPhoneWarning = false;
+	private bool isPhoneInputStarted = false;
+
+	private void CheckPhoneNumber(ChangeEventArgs e)
+	{
+		sv.SoDienThoai = e.Value?.ToString() ?? string.Empty;
+		isPhoneInputStarted = true; // Bắt đầu nhập số điện thoại mới
+		phoneWarningMessage = ValidatePhoneNumber(sv.SoDienThoai); // Kiểm tra số điện thoại khi người dùng nhập
+		StateHasChanged();
+	}
+
+	public string ValidatePhoneNumber(string value)
+	{
+		if (isPhoneInputStarted) // Chỉ kiểm tra khi người dùng bắt đầu nhập số điện thoại mới
+		{
+			if (string.IsNullOrWhiteSpace(value))
+			{
+				showPhoneWarning = true; // Hiển thị cảnh báo nếu số điện thoại để trống
+				return "Vui lòng không để trống số điện thoại";
+			}
+
+			if (!Regex.IsMatch(value, @"^[0-9]{1,10}$"))
+			{
+				showPhoneWarning = true; // Hiển thị cảnh báo nếu số điện thoại không hợp lệ
+				return "Vui lòng chỉ nhập số (dưới 11 số)";
+			}
+		}
+		else
+		{
+			showPhoneWarning = false; // Ẩn cảnh báo nếu người dùng chưa bắt đầu nhập số điện thoại mới
+		}
+
+		return string.Empty;
 	}
 }

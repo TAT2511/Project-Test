@@ -69,7 +69,7 @@
 						<div class="row">
 							<!-- Thông tin sinh viên -->
 							<div class="col-md-4">
-								<h6><strong>Thông Tin Sinh Viên</strong></h6>
+								<h6><strong><em>Thông Tin Sinh Viên</em></strong></h6>
 								<p><strong>Mã số sinh viên:</strong> @selectedStudent.MaSoSv</p>
 								<p><strong>Họ tên cựu sinh viên:</strong> @selectedStudent.HoTenCuuSv</p>
 								<p><strong>Mã định danh:</strong> @selectedStudent.MaDinhDanh</p>
@@ -78,7 +78,7 @@
 
 							<!-- Thông tin chi tiết -->
 							<div class="col-md-4">
-								<h6><strong>Thông Tin Chi Tiết</strong></h6>
+								<h6><strong><em>Thông Tin Chi Tiết</em></strong></h6>
 								<p><strong>Số điện thoại:</strong> @selectedStudent.SoDienThoai</p>
 								<p><strong>Địa chỉ liên hệ:</strong> @selectedStudent.DiaChiLienHe</p>
 								<p><strong>Ngày sinh:</strong> @selectedStudent.NgaySinh</p>
@@ -88,7 +88,7 @@
 
 							<!-- Thông tin thêm -->
 							<div class="col-md-4">
-								<h6><strong>Thông Tin Thêm</strong></h6>
+								<h6><strong><em>Thông Tin Thêm</em></strong></h6>
 								<p><strong>Tham gia đoàn:</strong> @selectedStudent.ThamGiaDoan</p>
 								<p><strong>Ngày vào đoàn:</strong> @selectedStudent.NgayVaoDoan?.ToString("dd/MM/yyyy")</p>
 								<p><strong>Tham gia đảng:</strong> @selectedStudent.ThamGiaDang</p>
@@ -100,6 +100,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" @onclick="CloseInfoPopup">Đóng</button>
+					<a href="edit/@(selectedStudent?.Id)" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Sửa</a>
 				</div>
 			</div>
 		</div>
@@ -165,7 +166,7 @@
 			<td>@item.DiaChiLienHe</td>
 			<td>@item.NgaySinh</td>
 			<td>
-				<a href="Edit?id=@item.Id" class="button"><i class="fas fa-pencil-alt"></i></a> |
+				<a href="edit/@item.Id" class="button"><i class="fas fa-pencil-alt"></i></a> |
 				<button @onclick="() => ShowInfoPopup(item.Id)" class="button"><i class="fas fa-user"></i></button> |
 				<button @onclick="() => ConfirmDelete(item.Id)" class="button delete-button">
 					<i class="fas fa-trash"></i>
@@ -189,6 +190,3 @@
 		<button @onclick="() => LoadPage(TotalPages)">&gt;&gt;</button>
 	</div>
 }
-
-
-

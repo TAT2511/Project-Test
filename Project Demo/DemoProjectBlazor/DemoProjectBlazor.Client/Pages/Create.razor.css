@@ -1,6 +1,7 @@
-﻿h2{
-    padding:10px;
+﻿h2 {
+    padding: 10px;
 }
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -15,7 +16,7 @@
     .form-group label {
         width: 300%;
         font-weight: bold;
-        padding:5px;
+        padding: 5px;
     }
 
 .form-control {
@@ -26,7 +27,7 @@
 }
 
 .button-container {
-    text-align: right;
+    text-align: left;
     margin-top: 20px;
 }
 
@@ -54,3 +55,13 @@
     .back-link:hover {
         color: #007bff;
     }
+
+.text-errors {
+    margin-top: 5px;
+    color: #ffc107; /* Màu vàng */
+    font-size: 14px;
+    font-style: italic;
+    border: 1px solid #ffc107; /* Khung xung quanh */
+    padding: 5px;
+    text-align: center; /* Căn giữa ngang */    
+}

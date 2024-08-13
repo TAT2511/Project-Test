@@ -52,32 +52,41 @@ namespace DemoProjectBlazor.Client.Pages
 		//Chọn check tất cả checkbox
 		private void ToggleSelectAll(ChangeEventArgs e)
 		{
-			var isChecked = (bool)e.Value;
+			var isChecked = e.Value as bool?;
 
-			if (isChecked)
+			if (isChecked.HasValue)
 			{
-				selectedIds = dsCuuSinhVien.Select(sv => sv.Id).ToList();
-			}
-			else
-			{
-				selectedIds.Clear();
+				if (isChecked.Value)
+				{
+					selectedIds = dsCuuSinhVien?.Select(sv => sv.Id).ToList() ?? new List<Guid>();
+				}
+				else
+				{
+					selectedIds?.Clear();
+				}
 			}
 		}
 
 		private void ToggleSelection(Guid id, ChangeEventArgs e)
 		{
-			var isChecked = (bool)e.Value;
+			var isChecked = e.Value as bool?;
 
-			if (isChecked)
+			if (isChecked.HasValue)
 			{
-				if (!selectedIds.Contains(id))
+				if (selectedIds != null)
 				{
-					selectedIds.Add(id);
+					if (isChecked.Value)
+					{
+						if (!selectedIds.Contains(id))
+						{
+							selectedIds.Add(id);
+						}
+					}
+					else
+					{
+						selectedIds.Remove(id);
+					}
 				}
-			}
-			else
-			{
-				selectedIds.Remove(id);
 			}
 		}
 		//Popup Xóa 1 hay nhiều sinh viên trong checkbox đã chọn
@@ -90,6 +99,7 @@ namespace DemoProjectBlazor.Client.Pages
 			}
 			// Hiển thị thông báo xác nhận
 			isDeletingSelected = true;
+			await Task.Yield();
 		}
 
 		private async Task ConfirmDeleteSelected()
@@ -139,16 +149,25 @@ namespace DemoProjectBlazor.Client.Pages
 		{
 			isDeleting = false;
 		}
-		//Popup hiện chi tiết thông tin sinh viên
+		//Lấy detail thông tin sinh viên lên popup
 		private bool isInfoPopupOpen = false;
-		private AlumniCuuSv selectedStudent;
+		private AlumniCuuSv? selectedStudent; // Để selectedStudent nullable
 
 		private async Task ShowInfoPopup(Guid studentId)
 		{
 			try
 			{
-				selectedStudent = await Http.GetFromJsonAsync<AlumniCuuSv>($"api/cuuSinhVien/{studentId}");
-				isInfoPopupOpen = true;
+				var student = await Http.GetFromJsonAsync<AlumniCuuSv>($"api/cuuSinhVien/{studentId}");
+
+				if (student != null)
+				{
+					selectedStudent = student;
+					isInfoPopupOpen = true;
+				}
+				else
+				{
+					Console.WriteLine("Không thể lấy thông tin sinh viên. Dữ liệu trả về là null.");
+				}
 			}
 			catch (HttpRequestException ex)
 			{
@@ -158,6 +177,7 @@ namespace DemoProjectBlazor.Client.Pages
 
 		private void CloseInfoPopup()
 		{
+			selectedStudent = null;
 			isInfoPopupOpen = false;
 		}
 	}

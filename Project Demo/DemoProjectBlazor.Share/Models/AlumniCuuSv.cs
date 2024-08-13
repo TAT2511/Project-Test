@@ -31,8 +31,9 @@ public partial class AlumniCuuSv
     public string GioiTinh { get; set; } = null!;
 
     public string? Email { get; set; }
+	
 
-    public string? DanToc { get; set; }
+	public string? DanToc { get; set; }
 
     public string? TonGiao { get; set; }
 

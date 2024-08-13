@@ -90,6 +90,33 @@ namespace DemoProjectBlazor.Controllers
 
 			return BadRequest(ModelState); // Trả về thông báo lỗi nếu dữ liệu không hợp lệ
 		}
+		// Phương thức chỉnh sửa thông tin sinh viên
+		[HttpPut("{id}")]
+		public async Task<IActionResult> Edit(Guid id, [FromBody] AlumniCuuSv updatedSv)
+		{
+			if (id != updatedSv.Id)
+			{
+				return BadRequest("ID không khớp.");
+			}
+
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					// Cập nhật dữ liệu sinh viên
+					_context.Entry(updatedSv).State = EntityState.Modified;
+					await _context.SaveChangesAsync();
+
+					return Ok(updatedSv);
+				}
+				catch (Exception ex)
+				{
+					return BadRequest(ex.Message);
+				}
+			}
+
+			return BadRequest(ModelState);
+		}
 	}
 	
 }
