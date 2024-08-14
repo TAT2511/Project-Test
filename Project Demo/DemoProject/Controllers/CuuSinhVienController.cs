@@ -129,7 +129,8 @@ namespace DemoProject.Controllers
         public ActionResult Edit(Guid id)
         {
             // Lấy danh sách Tỉnh/Thành phố và truyền vào ViewBag
-            var danhSachTinh = dataSinhVien.Alumni_DonViHanhChinh.Where(d => d.LoaiDonViHanhChinh_Id == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
+            var danhSachTinh = dataSinhVien.Alumni_DonViHanhChinh
+                .Where(d => d.LoaiDonViHanhChinh_Id == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
                 .Select(d => new
                 {
                     TenDonViHanhChinh = d.TenDonViHanhChinh,
@@ -139,7 +140,8 @@ namespace DemoProject.Controllers
             ViewBag.DanhSachTinh = new SelectList(danhSachTinh, "ID", "TenDonViHanhChinh");
 
             // Lấy danh sách Quận/Huyện và truyền vào ViewBag
-            var danhSachQuanHuyen = dataSinhVien.Alumni_DonViHanhChinh.Where(d => d.LoaiDonViHanhChinh_Id == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
+            var danhSachQuanHuyen = dataSinhVien.Alumni_DonViHanhChinh
+                .Where(d => d.LoaiDonViHanhChinh_Id == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
                 .Select(d => new
                 {
                     TenDonViHanhChinh = d.TenDonViHanhChinh,
@@ -149,7 +151,8 @@ namespace DemoProject.Controllers
             ViewBag.DanhSachQuanHuyen = new SelectList(danhSachQuanHuyen, "ID", "TenDonViHanhChinh");
 
             // Lấy danh sách Xã/Phường và truyền vào ViewBag
-            var danhSachXaPhuong = dataSinhVien.Alumni_DonViHanhChinh.Where(d => d.LoaiDonViHanhChinh_Id == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
+            var danhSachXaPhuong = dataSinhVien.Alumni_DonViHanhChinh
+                .Where(d => d.LoaiDonViHanhChinh_Id == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
                 .Select(d => new
                 {
                     TenDonViHanhChinh = d.TenDonViHanhChinh,

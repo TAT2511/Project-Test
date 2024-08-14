@@ -135,7 +135,7 @@ namespace DemoProjectBlazor.Client.Pages
 			}
 			else
 			{
-				Console.WriteLine("Error deleting item");
+				Console.WriteLine("Lỗi không xóa được sinh viên");
 			}
 
 			isDeleting = false;

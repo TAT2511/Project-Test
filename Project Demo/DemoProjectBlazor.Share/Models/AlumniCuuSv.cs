@@ -102,6 +102,5 @@ public partial class AlumniCuuSv
 
     public virtual AlumniDonViHanhChinh? TinhThanh { get; set; }
 
-
     public virtual AlumniDonViHanhChinh? XaPhuong { get; set; }
 }

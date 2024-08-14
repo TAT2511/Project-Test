@@ -6,6 +6,7 @@ using DemoProjectBlazor.Server.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using static DemoProjectBlazor.Client.Pages.Create;
 using Microsoft.IdentityModel.Tokens;
+using MvcSelectListItem = Microsoft.AspNetCore.Mvc.Rendering.SelectListItem;
 
 namespace DemoProjectBlazor.Controllers
 {
@@ -117,6 +118,63 @@ namespace DemoProjectBlazor.Controllers
 
 			return BadRequest(ModelState);
 		}
+
+		[HttpGet("dataCuuSV")]
+		public async Task<IActionResult> GetDataCuuSV()
+		{
+			var quocGiaList = await _context.AlumniQuocGia
+				.Select(q => new MvcSelectListItem
+				{
+					Value = q.Id.ToString(),
+					Text = q.TenQuocGia
+				})
+				.ToListAsync();
+
+			var truongHocList = await _context.AlumniThongTinTruongs
+				.Select(t => new MvcSelectListItem
+				{
+					Value = t.Id.ToString(),
+					Text = t.TenTruong
+				})
+				.ToListAsync();
+
+			var phuongXaList = await _context.AlumniDonViHanhChinhs
+				.Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
+				.Select(d => new MvcSelectListItem
+				{
+					Value = d.Id.ToString(),
+					Text = d.TenDonViHanhChinh
+				})
+				.ToListAsync();
+
+			var tinhThanhList = await _context.AlumniDonViHanhChinhs
+				.Where(d => d.LoaiDonViHanhChinhId == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
+				.Select(d => new MvcSelectListItem
+				{
+					Value = d.Id.ToString(),
+					Text = d.TenDonViHanhChinh
+				})
+				.ToListAsync();
+
+			var quanHuyenList = await _context.AlumniDonViHanhChinhs
+				.Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
+				.Select(d => new MvcSelectListItem
+				{
+					Value = d.Id.ToString(),
+					Text = d.TenDonViHanhChinh
+				})
+				.ToListAsync();
+
+			var result = new
+			{
+				QuocGias = quocGiaList,
+				Truongs = truongHocList,
+				PhuongXas = phuongXaList,
+				TinhThanhs = tinhThanhList,
+				QuanHuyens = quanHuyenList
+			};
+
+			return Ok(result);
+		}
 	}
-	
 }

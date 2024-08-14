@@ -10,132 +10,169 @@
 <h2>Sửa Sinh Viên</h2>
 @if (sv != null)
 {
-	<div class="info-CuuSinhVien">
-		<div class="personal-info">
-			<h2><i class="fas fa-user-circle"></i><span class="icon-space">Thông tin cá nhân</span></h2>
+	<EditForm Model="sv" OnValidSubmit="HandleValidSubmit">
+		<DataAnnotationsValidator />
+		<ValidationSummary />
+		<div class="info-CuuSinhVien">
+			<div class="personal-info">
+				<h2><i class="fas fa-user-circle"></i><span class="icon-space">Thông tin cá nhân</span></h2>
 
-			<dl class="personal-horizontal">
-				<div class="horizontal-row">
-					<dt>Mã số sinh viên</dt>
-					<dd>
-						<input id="MaSoSv" @bind="sv.MaSoSv" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Họ cựu sinh viên</dt>
-					<dd>
-						<input id="HoCuuSv" @bind="sv.HoCuuSv" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Tên cựu sinh viên</dt>
-					<dd>
-						<input id="TenCuuSv" @bind="sv.TenCuuSv" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Họ tên cựu sinh viên</dt>
-					<dd>
-						<input id="HoTenCuuSv" @bind="sv.HoTenCuuSv" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Mã định danh</dt>
-					<dd>
-						<input id="MaDinhDanh" @bind="sv.MaDinhDanh" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Giới tính</dt>
-					<dd>
-						<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Địa chỉ liên hệ</dt>
-					<dd>
-						<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" class="form-control" />
-					</dd>
-				</div>
-				<div class="horizontal-row">
-					<dt>Số điện thoại</dt>
-					<dd>
-						<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" class="form-control" />
-					</dd>
-				</div>
-			</dl>
-			<button type="submit" class="btn btn-primary">Thêm Sinh Viên</button>
-			<a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Trở lại</a>
-		</div>
-		<div class="detail-info">
-			<h2><i class="fas fa-info-circle"></i><span class="icon-space">Thông tin chi tiết</span></h2>
-			<dl class="details-horizontal">
-				<dt>Email</dt>
-
-				<dt>Dân tộc</dt>
-
-				<dt>Tôn giáo</dt>
-
-				<dt>Tham gia đảng</dt>
-
-				<dt>Ngày vào đảng</dt>
-
-				<dt>Tham gia đoàn</dt>
-
-				<dt>Ngày vào đoàn</dt>
-			</dl>
-		</div>
-
-		<div class="contact-course-container">
-			<div class="contact-info">
-				<h2><i class="fas fa-bookmark"></i><span class="icon-space">Thông tin thêm</span></h2>
 				<dl class="personal-horizontal">
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Mã số sinh viên</dt>
+						<dd>
+							<input id="MaSoSv" @bind="sv.MaSoSv" class="form-control" />
+						</dd>
 					</div>
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Họ cựu sinh viên</dt>
+						<dd>
+							<input id="HoCuuSv" @bind="sv.HoCuuSv" class="form-control" />
+						</dd>
 					</div>
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Tên cựu sinh viên</dt>
+						<dd>
+							<input id="TenCuuSv" @bind="sv.TenCuuSv" class="form-control" />
+						</dd>
 					</div>
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Họ tên cựu sinh viên</dt>
+						<dd>
+							<input id="HoTenCuuSv" @bind="sv.HoTenCuuSv" class="form-control" />
+						</dd>
 					</div>
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Mã định danh</dt>
+						<dd>
+							<input id="MaDinhDanh" @bind="sv.MaDinhDanh" class="form-control" />
+						</dd>
 					</div>
 					<div class="horizontal-row">
-						<dt></dt>
+						<dt>Giới tính</dt>
+						<dd>
+							<select id="GioiTinh" class="form-control" @bind="sv.GioiTinh">
+								<option value="">Chọn giới tính</option>
+								<option value="M">Nam</option>
+								<option value="F">Nữ</option>
+							</select>
+						</dd>
 					</div>
+				</dl>
+				<button type="submit" class="btn btn-primary">Sửa Sinh Viên</button>
+				<a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Trở lại</a>
+			</div>
+			<div class="detail-info">
+				<h2><i class="fas fa-location-arrow"></i><span class="icon-space">Thông tin chi tiết</span></h2>
+				<dl class="details-horizontal">
+					<dt>Trường</dt>
+					<dd>
+						<input id="TruongId" @bind="sv.TruongId" class="form-control" />
+					</dd>
+					<dt>Quốc gia</dt>
+					<dd>
+						<input id="QuocGiaId" @bind="sv.QuocGiaId" class="form-control" />
+					</dd>
+					<dt>Tỉnh thành phố</dt>
+					<dd>
+						<input id="TinhThanhId" @bind="sv.TinhThanhId" class="form-control" />
+					</dd>
+					<dt>Quận huyện</dt>
+					<dd>
+						<input id="QuanHuyenId" @bind="sv.QuanHuyenId" class="form-control" />
+					</dd>
+					<dt>Xã phường</dt>
+					<dd>
+						<input id="XaPhuongId" @bind="sv.XaPhuongId" class="form-control" />
+					</dd>
 				</dl>
 			</div>
-			<div class="course-info">
-				<h2><i class="fas fa-book-open"></i><span class="icon-space">Thông tin bổ sung</span></h2>
-				<dl class="personal-horizontal">
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-					<div class="horizontal-row">
-						<dt></dt>
-					</div>
-				</dl>
+			<div class="contact-subin4-container">
+				<div class="contact-info">
+					<h2><i class="fas fa-phone"></i><span class="icon-space">Thông tin liên lạc</span></h2>
+					<dl class="personal-horizontal">
+						<div class="horizontal-row">
+							<dt>Email</dt>
+							<dd>
+								<input id="Email" @bind="sv.Email" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Số điện thoại</dt>
+							<dd>
+								<input id="SoDienThoai" @bind="sv.SoDienThoai" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Địa chỉ liên hệ</dt>
+							<dd>
+								<input id="DiaChiLienHe" @bind="sv.DiaChiLienHe" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Quốc tịch</dt>
+							<dd>
+								<input id="QuocTich" @bind="sv.QuocTich" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Ngày sinh</dt>
+							<dd>
+								<input id="NgaySinh" @bind="sv.NgaySinh" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Nơi sinh</dt>
+							<dd>
+								<input id="NoiSinh" @bind="sv.NoiSinh" class="form-control" />
+							</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="subin4-info">
+					<h2><i class="fas fa-address-card"></i><span class="icon-space">Thông tin bổ sung</span></h2>
+					<dl class="personal-horizontal">
+						<div class="horizontal-row">
+							<dt>Dân tộc</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.DanToc" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Tôn giáo</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.TonGiao" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Tham gia đoàn</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.ThamGiaDoan" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Ngày vào đoàn</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Tham gia đảng</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.ThamGiaDang" class="form-control" />
+							</dd>
+						</div>
+						<div class="horizontal-row">
+							<dt>Ngày vào đảng</dt>
+							<dd>
+								<input id="NgayVaoDoan" @bind="sv.NgayVaoDang" class="form-control" />
+							</dd>
+						</div>
+					</dl>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	</EditForm>
 }
 @code {
 	[Parameter]

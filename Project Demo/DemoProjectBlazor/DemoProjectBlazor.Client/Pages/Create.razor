@@ -9,155 +9,228 @@
 <h2>Thêm Sinh Viên</h2>
 
 
-@if (sv != null)
-{
-	<EditForm Model="@sv" OnValidSubmit="@SaveAlumniCuuSv">
-		<DataAnnotationsValidator />
-		<ValidationSummary />
-		<div class="form-row">
-			<div class="form-group col-3">
-				<label for="TruongId">Trường:</label>
-				<input id="TruongId" class="form-control" @bind="sv.TruongId" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="MaSoSv">Mã số sinh viên:</label>
-				<input id="MaSoSv" class="form-control" @bind="sv.MaSoSv" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="HoCuuSv">Họ cựu sinh viên:</label>
-				<input id="HoCuuSv" class="form-control" @bind="sv.HoCuuSv" @oninput="UpdateHoTenCuuSv" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="TenCuuSv">Tên cựu sinh viên:</label>
-				<input id="TenCuuSv" class="form-control" @bind="sv.TenCuuSv" @oninput="UpdateHoTenCuuSv" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="HoTenCuuSv">Họ tên cựu sinh viên:</label>
-				<input id="HoTenCuuSv" class="form-control" @bind="sv.HoTenCuuSv" readonly />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="MaDinhDanh">Mã định danh:</label>
-				<input id="MaDinhDanh" class="form-control" @bind="sv.MaDinhDanh" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="GioiTinh">Giới tính:</label>
-				<select id="GioiTinh" class="form-control" @bind="sv.GioiTinh">
-					<option value="">Chọn giới tính</option>
-					<option value="M">Nam</option>
-					<option value="F">Nữ</option>
-				</select>
-			</div>
-
-			<div class="form-group col-3">
-				<label for="Email">Email:</label>
-				<input id="Email" class="form-control" @bind="sv.Email" @oninput="CheckEmail" />
-				@if (!string.IsNullOrWhiteSpace(ValidateEmail(sv.Email)))
+<EditForm Model="@sv" OnValidSubmit="@SaveAlumniCuuSv">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+	<div class="form-row">
+		<div class="form-group col-3">
+			<label for="TruongId">Trường:</label>
+			<select id="TruongId" class="form-control" @bind="sv.TruongId">
+				<option value="">Chọn trường</option>
+				@foreach (var truong in truongHocList)
 				{
-					<div class="text-errors">@ValidateEmail(sv.Email)</div>
+					<option value="@truong.Value">
+						@truong.Text
+					</option>
 				}
-			</div>
-
-			<div class="form-group col-3">
-				<label for="DanToc">Dân tộc:</label>
-				<input id="DanToc" class="form-control" @bind="sv.DanToc" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="TonGiao">Tôn giáo:</label>
-				<input id="TonGiao" class="form-control" @bind="sv.TonGiao" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="QuocGiaId">Quốc gia:</label>
-				<input id="QuocGiaId" class="form-control" @bind="sv.QuocGiaId" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="TinhThanhId">Tỉnh thành:</label>
-				<input id="TinhThanhId" class="form-control" @bind="sv.TinhThanhId" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="QuanHuyenId">Quận Huyện:</label>
-				<input id="QuanHuyenId" class="form-control" @bind="sv.QuanHuyenId" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="XaPhuongId">Xã phường:</label>
-				<input id="XaPhuongId" class="form-control" @bind="sv.XaPhuongId" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="DiaChiLienHe">Địa chỉ liên hệ:</label>
-				<input id="DiaChiLienHe" class="form-control" @bind="sv.DiaChiLienHe" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="HinhAnhDaiDien">Hình ảnh đại diện:</label>
-				<input id="HinhAnhDaiDien" class="form-control" @bind="sv.HinhAnhDaiDien" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="ThamGiaDoan">Tham gia đoàn:</label>
-				<input id="ThamGiaDoan" class="form-control" @bind="sv.ThamGiaDoan" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="NgayVaoDoan">Ngày vào đoàn:</label>
-				<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" type="date" class="form-control" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="ThamGiaDang">Tham gia đảng:</label>
-				<input id="ThamGiaDang" class="form-control" @bind="sv.ThamGiaDang" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="NgayVaoDang">Ngày vào đảng:</label>
-				<input id="NgayVaoDang" @bind="sv.NgayVaoDang" type="date" class="form-control" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="SoDienThoai">Số điện thoại:</label>
-				<input id="SoDienThoai" class="form-control" @bind="sv.SoDienThoai" @oninput="CheckPhoneNumber" />
-				@if (!string.IsNullOrWhiteSpace(ValidatePhoneNumber(sv.SoDienThoai)))
-				{
-					<div class="text-errors">@ValidatePhoneNumber(sv.SoDienThoai)</div>
-				}
-			</div>
-
-			<div class="form-group col-3">
-				<label for="QuocTich">Quốc tịch:</label>
-				<input id="QuocTich" class="form-control" @bind="sv.QuocTich" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="NgaySinh">Ngày sinh:</label>
-				<input id="NgaySinh" @bind="sv.NgaySinh" class="form-control" Format="dd/MM/yyyy" />
-			</div>
-
-			<div class="form-group col-3">
-				<label for="NoiSinh">Nơi sinh:</label>
-				<input id="NoiSinh" class="form-control" @bind="sv.NoiSinh" />
-			</div>
-
-			<div class="button-container">
-				<button type="submit" class="btn btn-primary">Thêm Sinh Viên</button>
-				<a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Trở lại</a>
-			</div>
+			</select>
 		</div>
-	</EditForm>
-}
+
+		<div class="form-group col-3">
+			<label for="MaSoSv">Mã số sinh viên:</label>
+			<input id="MaSoSv" class="form-control" @bind="sv.MaSoSv" required />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="HoCuuSv">Họ cựu sinh viên:</label>
+			<input id="HoCuuSv" class="form-control" @bind="sv.HoCuuSv" @oninput="UpdateHoTenCuuSv" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="TenCuuSv">Tên cựu sinh viên:</label>
+			<input id="TenCuuSv" class="form-control" @bind="sv.TenCuuSv" @oninput="UpdateHoTenCuuSv" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="HoTenCuuSv">Họ tên cựu sinh viên:</label>
+			<input id="HoTenCuuSv" class="form-control" @bind="sv.HoTenCuuSv" readonly />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="MaDinhDanh">Mã định danh:</label>
+			<input id="MaDinhDanh" class="form-control" @bind="sv.MaDinhDanh" required />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="GioiTinh">Giới tính:</label>
+			<select id="GioiTinh" class="form-control" @bind="sv.GioiTinh">
+				<option value="">Chọn giới tính</option>
+				<option value="M">Nam</option>
+				<option value="F">Nữ</option>
+			</select>
+		</div>
+
+		<div class="form-group col-3">
+			<label for="Email">Email:</label>
+			<input id="Email" class="form-control" @bind="sv.Email" @oninput="CheckEmail" />
+			@if (!string.IsNullOrWhiteSpace(ValidateEmail(sv.Email)))
+			{
+				<div class="text-errors">@ValidateEmail(sv.Email)</div>
+			}
+		</div>
+
+		<div class="form-group col-3">
+			<label for="DanToc">Dân tộc:</label>
+			<input id="DanToc" class="form-control" @bind="sv.DanToc" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="TonGiao">Tôn giáo:</label>
+			<input id="TonGiao" class="form-control" @bind="sv.TonGiao" />
+		</div>
+
+		@* <div class="form-group col-3">
+			<label for="QuocGiaId">Quốc gia:</label>
+			<select id="QuocGiaId" class="form-control" @bind="sv.QuocGiaId">
+				<option value="">Chọn trường</option>
+				@foreach (var quocGia in quocGiaList)
+				{
+					<option value="@quocGia.Value" selected="@(sv.QuocGiaId == quocGia.Value ? "selected" : null)">
+						@quocGia.Text
+					</option>
+				}
+			</select>
+		</div> *@
+
+		<div class="form-group col-3">
+			<label for="TinhThanhId">Tỉnh thành:</label>
+			<select id="TinhThanhId" class="form-control" @bind="sv.TinhThanhId">
+				<option value="">Chọn tỉnh thành</option>
+				@foreach (var tinhThanh in tinhThanhList)
+				{
+					<option value="@tinhThanh.Value">
+						@tinhThanh.Text
+					</option>
+				}
+			</select>
+		</div>
+
+		<div class="form-group col-3">
+			<label for="QuanHuyenId">Quận Huyện:</label>
+			<select id="QuanHuyenId" class="form-control" @bind="sv.QuanHuyenId">
+				<option value="">Chọn quận huyện</option>
+				@foreach (var quanHuyen in quanHuyenList)
+				{
+					<option value="@quanHuyen.Value">
+						@quanHuyen.Text
+					</option>
+				}
+			</select>
+		</div>
+
+		<div class="form-group col-3">
+			<label for="XaPhuongId">Xã phường:</label>
+			<select id="XaPhuongId" class="form-control" @bind="sv.XaPhuongId">
+				<option value="">Chọn xã phường</option>
+				@foreach (var xaPhuong in phuongXaList)
+				{
+					<option value="@xaPhuong.Value">
+						@xaPhuong.Text
+					</option>
+				}
+			</select>
+		</div>
+
+		<div class="form-group col-3">
+			<label for="DiaChiLienHe">Địa chỉ liên hệ:</label>
+			<input id="DiaChiLienHe" class="form-control" @bind="sv.DiaChiLienHe" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="HinhAnhDaiDien">Hình ảnh đại diện:</label>
+			<input id="HinhAnhDaiDien" class="form-control" @bind="sv.HinhAnhDaiDien" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="ThamGiaDoan">Tham gia đoàn:</label>
+			<input id="ThamGiaDoan" class="form-control" @bind="sv.ThamGiaDoan" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="NgayVaoDoan">Ngày vào đoàn:</label>
+			<input id="NgayVaoDoan" @bind="sv.NgayVaoDoan" type="date" class="form-control" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="ThamGiaDang">Tham gia đảng:</label>
+			<input id="ThamGiaDang" class="form-control" @bind="sv.ThamGiaDang" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="NgayVaoDang">Ngày vào đảng:</label>
+			<input id="NgayVaoDang" @bind="sv.NgayVaoDang" type="date" class="form-control" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="SoDienThoai">Số điện thoại:</label>
+			<input type="number" id="SoDienThoai" class="form-control" @bind="sv.SoDienThoai" @oninput="CheckPhoneNumber" />
+			@if (!string.IsNullOrWhiteSpace(ValidatePhoneNumber(sv.SoDienThoai)))
+			{
+				<div class="text-errors">@ValidatePhoneNumber(sv.SoDienThoai)</div>
+			}
+		</div>
+
+		<div class="form-group col-3">
+			<label for="QuocTich">Quốc tịch:</label>
+			<input id="QuocTich" class="form-control" @bind="sv.QuocTich" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="NgaySinh">Ngày sinh:</label>
+			<input id="NgaySinh" @bind="sv.NgaySinh" class="form-control" Format="dd/MM/yyyy" />
+		</div>
+
+		<div class="form-group col-3">
+			<label for="NoiSinh">Nơi sinh:</label>
+			<input id="NoiSinh" class="form-control" @bind="sv.NoiSinh" />
+		</div>
+
+		<div class="button-container">
+			<button type="submit" class="btn btn-primary">Thêm Sinh Viên</button>
+			<a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Trở lại</a>
+		</div>
+	</div>
+</EditForm>
 
 
 @code {
 	AlumniCuuSv sv = new AlumniCuuSv();
+	private List<MvcSelectListItem> quocGiaList = new();
+	private List<MvcSelectListItem> truongHocList = new();
+	private List<MvcSelectListItem> phuongXaList = new();
+	private List<MvcSelectListItem> tinhThanhList = new();
+	private List<MvcSelectListItem> quanHuyenList = new();
+
+	public class ApiData
+	{
+		public List<MvcSelectListItem> QuocGias { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> Truongs { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> TinhThanhs { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> QuanHuyens { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> PhuongXas { get; set; } = new List<MvcSelectListItem>();
+	}
+
+	public class MvcSelectListItem
+	{
+		public string Value { get; set; } = string.Empty;
+		// public Guid? Value { get; set; }
+		public string Text { get; set; } = string.Empty;
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await Http.GetFromJsonAsync<ApiData>("api/cuuSinhVien/dataCuuSV");
+
+		if (response != null)
+		{
+			quocGiaList = response.QuocGias;
+			truongHocList = response.Truongs;
+			phuongXaList = response.PhuongXas;
+			tinhThanhList = response.TinhThanhs;
+			quanHuyenList = response.QuanHuyens;
+		}
+	}
+
 
 	private async Task SaveAlumniCuuSv()
 	{
