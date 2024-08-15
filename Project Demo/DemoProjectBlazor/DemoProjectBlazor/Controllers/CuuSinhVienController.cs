@@ -119,7 +119,7 @@ namespace DemoProjectBlazor.Controllers
 			return BadRequest(ModelState);
 		}
 		[HttpGet("dataCuuSV")]
-		public async Task<IActionResult> GetDataCuuSV([FromQuery] Guid? selectedTinhThanhId, [FromQuery] Guid? selectedQuanHuyenId)
+		public async Task<IActionResult> GetDataCuuSV()
 		{
 			// Truy vấn danh sách quốc gia
 			var quocGiaList = await _context.AlumniQuocGia
@@ -181,37 +181,36 @@ namespace DemoProjectBlazor.Controllers
 			return Ok(result);
 		}
 		[HttpGet("Filter")]
-		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> Filter(string? sex, string? searchQuery, int page = 1, int pageSize = 5)
+		public async Task<IActionResult> Filter([FromQuery] string? sex, [FromQuery] string? searchQuery, [FromQuery] int page = 1, [FromQuery] int pageSize = 5)
 		{
-			var query = _context.AlumniCuuSvs.AsQueryable();
+			// Giả sử bạn có một phương thức để lấy dữ liệu và tổng số mục
+			var query = _context.AlumniCuuSv.AsQueryable();
 
-			// Lọc theo giới tính
 			if (!string.IsNullOrEmpty(sex))
 			{
-				query = query.Where(sv => sv.GioiTinh == sex);
+				query = query.Where(sv => sv.Gender == sex);
 			}
 
-			// Tìm kiếm theo từ khóa
 			if (!string.IsNullOrEmpty(searchQuery))
 			{
-
-				query = query.Where(sv =>
-				(sv.HoTenCuuSv != null && sv.HoTenCuuSv.Contains(searchQuery)) ||
-				(sv.MaSoSv != null && sv.MaSoSv.Contains(searchQuery)));
+				query = query.Where(sv => sv.Name.Contains(searchQuery));
 			}
 
-			// Tính tổng số lượng phần tử
-			var totalItems = await query.CountAsync();
+			var totalCount = await query.CountAsync();
+			var data = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
-			// Phân trang
-			var data = await query
-				.Skip((page - 1) * pageSize)
-				.Take(pageSize)
-				.ToListAsync();
+			var response = new FilterResponse
+			{
+				Data = data,
+				TotalCount = totalCount
+			};
 
-			Response.Headers.Add("X-Total-Count", totalItems.ToString());
-
-			return Ok(data);
+			return Ok(response);
+		}
+		public class FilterResponse
+		{
+			public List<AlumniCuuSv> Data { get; set; }
+			public int TotalCount { get; set; }
 		}
 	}
 }

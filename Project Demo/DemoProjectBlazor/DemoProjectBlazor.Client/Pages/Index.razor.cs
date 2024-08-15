@@ -180,9 +180,9 @@ namespace DemoProjectBlazor.Client.Pages
 			selectedStudent = null;
 			isInfoPopupOpen = false;
 		}
+
 		private string? searchQuery;
 		private string? selectedGender;
-
 		private async Task OnSearchAsync()
 		{
 			var queryParams = new List<string>();
@@ -202,7 +202,9 @@ namespace DemoProjectBlazor.Client.Pages
 
 			dsCuuSinhVien = response ?? new List<AlumniCuuSv>();
 
-			TotalItems = int.Parse(Http.DefaultRequestHeaders.GetValues("X-Total-Count").FirstOrDefault() ?? "0");
+			// Kiểm tra header để lấy số lượng tổng
+			var totalCountHeader = Http.DefaultRequestHeaders.GetValues("X-Total-Count").FirstOrDefault();
+			TotalItems = !string.IsNullOrEmpty(totalCountHeader) ? int.Parse(totalCountHeader) : 0;
 			TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
 
 			StateHasChanged();
