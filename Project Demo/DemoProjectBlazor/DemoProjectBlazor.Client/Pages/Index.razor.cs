@@ -151,17 +151,17 @@ namespace DemoProjectBlazor.Client.Pages
 		}
 		//Lấy detail thông tin sinh viên lên popup
 		private bool isInfoPopupOpen = false;
-		private AlumniCuuSv? selectedStudent; // Để selectedStudent nullable
+		private AlumniCuuSv? selectedStudent; 
 
-		private async Task ShowInfoPopup(Guid studentId)
+		private async Task ShowInfoPopup(Guid maSV)
 		{
 			try
 			{
-				var student = await Http.GetFromJsonAsync<AlumniCuuSv>($"api/cuuSinhVien/{studentId}");
+				var sv = await Http.GetFromJsonAsync<AlumniCuuSv>($"api/cuuSinhVien/{maSV}");
 
-				if (student != null)
+				if (sv != null)
 				{
-					selectedStudent = student;
+					selectedStudent = sv;
 					isInfoPopupOpen = true;
 				}
 				else
@@ -179,6 +179,33 @@ namespace DemoProjectBlazor.Client.Pages
 		{
 			selectedStudent = null;
 			isInfoPopupOpen = false;
+		}
+		private string? searchQuery;
+		private string? selectedGender;
+
+		private async Task OnSearchAsync()
+		{
+			var queryParams = new List<string>();
+
+			if (!string.IsNullOrEmpty(selectedGender))
+			{
+				queryParams.Add($"sex={selectedGender}");
+			}
+
+			if (!string.IsNullOrEmpty(searchQuery))
+			{
+				queryParams.Add($"searchQuery={searchQuery}");
+			}
+
+			var queryString = string.Join("&", queryParams);
+			var response = await Http.GetFromJsonAsync<List<AlumniCuuSv>>($"api/cuuSinhVien/Filter?{queryString}&page={CurrentPage}&pageSize={PageSize}");
+
+			dsCuuSinhVien = response ?? new List<AlumniCuuSv>();
+
+			TotalItems = int.Parse(Http.DefaultRequestHeaders.GetValues("X-Total-Count").FirstOrDefault() ?? "0");
+			TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+
+			StateHasChanged();
 		}
 	}
 }

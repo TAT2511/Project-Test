@@ -166,13 +166,13 @@
 .button {
     display: inline-flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: black;
     text-decoration: none;
-    border: 1px solid black; 
+    border: 1px solid black;
     border-radius: 5px;
     transition: background-color 0.3s;
     cursor: pointer;
@@ -190,15 +190,15 @@
 /*Giao diện Phân trang*/
 .pagination-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
 
     .pagination-container button {
-        background-color: #ffffff; 
+        background-color: #ffffff;
         color: black;
-        border: 1px solid black; 
+        border: 1px solid black;
         padding: 8px 16px;
         margin: 0 4px;
         border-radius: 4px;
@@ -215,3 +215,5 @@
             background-color: #00ffff;
             color: white;
         }
+
+

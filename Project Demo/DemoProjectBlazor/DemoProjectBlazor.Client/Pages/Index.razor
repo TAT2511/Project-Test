@@ -83,7 +83,6 @@
 								<p><strong>Địa chỉ liên hệ:</strong> @selectedStudent.DiaChiLienHe</p>
 								<p><strong>Ngày sinh:</strong> @selectedStudent.NgaySinh</p>
 								<p><strong>Email:</strong> @selectedStudent.Email</p>
-								<p><strong>Quốc tịch:</strong> @selectedStudent.QuocTich</p>
 							</div>
 
 							<!-- Thông tin thêm -->
@@ -93,7 +92,6 @@
 								<p><strong>Ngày vào đoàn:</strong> @selectedStudent.NgayVaoDoan?.ToString("dd/MM/yyyy")</p>
 								<p><strong>Tham gia đảng:</strong> @selectedStudent.ThamGiaDang</p>
 								<p><strong>Ngày vào đảng:</strong> @selectedStudent.NgayVaoDang?.ToString("dd/MM/yyyy")</p>
-								<p><strong>Quốc gia:</strong> @selectedStudent.QuocGia</p>
 							</div>
 						</div>
 					}
@@ -113,11 +111,11 @@
 
 @if (isSearchFormOpen)
 {
-	<form method="get" action="Filter">
+	<form @onsubmit="OnSearchAsync">
 		<div class="filter-section">
 			<div class="filter-column">
 				<label class="dropdown-label">Giới Tính:</label>
-				<select id="GioiTinh" name="sex" class="form-control">
+				<select id="GioiTinh" @bind="selectedGender" class="form-control">
 					<option value="">-- Chọn Giới Tính --</option>
 					<option value="M">Nam</option>
 					<option value="F">Nữ</option>
@@ -126,7 +124,7 @@
 
 			<div class="filter-column">
 				<label class="dropdown-label">Tìm kiếm:</label>
-				<input type="text" name="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+				<input type="text" @bind="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
 			</div>
 
 			<div class="button-search-container">

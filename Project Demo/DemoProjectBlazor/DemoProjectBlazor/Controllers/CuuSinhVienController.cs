@@ -118,10 +118,10 @@ namespace DemoProjectBlazor.Controllers
 
 			return BadRequest(ModelState);
 		}
-
 		[HttpGet("dataCuuSV")]
-		public async Task<IActionResult> GetDataCuuSV()
+		public async Task<IActionResult> GetDataCuuSV([FromQuery] Guid? selectedTinhThanhId, [FromQuery] Guid? selectedQuanHuyenId)
 		{
+			// Truy vấn danh sách quốc gia
 			var quocGiaList = await _context.AlumniQuocGia
 				.Select(q => new MvcSelectListItem
 				{
@@ -130,6 +130,7 @@ namespace DemoProjectBlazor.Controllers
 				})
 				.ToListAsync();
 
+			// Truy vấn danh sách trường học
 			var truongHocList = await _context.AlumniThongTinTruongs
 				.Select(t => new MvcSelectListItem
 				{
@@ -138,15 +139,7 @@ namespace DemoProjectBlazor.Controllers
 				})
 				.ToListAsync();
 
-			var phuongXaList = await _context.AlumniDonViHanhChinhs
-				.Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
-				.Select(d => new MvcSelectListItem
-				{
-					Value = d.Id.ToString(),
-					Text = d.TenDonViHanhChinh
-				})
-				.ToListAsync();
-
+			// Truy vấn danh sách tỉnh/thành
 			var tinhThanhList = await _context.AlumniDonViHanhChinhs
 				.Where(d => d.LoaiDonViHanhChinhId == new Guid("272B1F7D-3574-420C-AF0D-573379FE51AC"))
 				.Select(d => new MvcSelectListItem
@@ -156,25 +149,69 @@ namespace DemoProjectBlazor.Controllers
 				})
 				.ToListAsync();
 
+			// Truy vấn danh sách quận/huyện
 			var quanHuyenList = await _context.AlumniDonViHanhChinhs
-				.Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
-				.Select(d => new MvcSelectListItem
-				{
-					Value = d.Id.ToString(),
-					Text = d.TenDonViHanhChinh
-				})
-				.ToListAsync();
+					.Where(d => d.LoaiDonViHanhChinhId == new Guid("68AEA74D-AA3D-4016-93B5-BE8B6F6AA4FC"))
+					.Select(d => new MvcSelectListItem
+					{
+						Value = d.Id.ToString(),
+						Text = d.TenDonViHanhChinh
+					})
+					.ToListAsync();
+			// Truy vấn danh sách phường/xã 
+			var phuongXaList = await _context.AlumniDonViHanhChinhs
+					.Where(d => d.LoaiDonViHanhChinhId == new Guid("99E34B70-B36B-49B1-A98C-CE417079A148"))
+					.Select(d => new MvcSelectListItem
+					{
+						Value = d.Id.ToString(),
+						Text = d.TenDonViHanhChinh
+					})
+					.ToListAsync();
 
+			// Tạo đối tượng kết quả và trả về dưới dạng JSON
 			var result = new
 			{
 				QuocGias = quocGiaList,
 				Truongs = truongHocList,
-				PhuongXas = phuongXaList,
 				TinhThanhs = tinhThanhList,
-				QuanHuyens = quanHuyenList
+				QuanHuyens = quanHuyenList,
+				PhuongXas = phuongXaList
 			};
 
 			return Ok(result);
+		}
+		[HttpGet("Filter")]
+		public async Task<ActionResult<IEnumerable<AlumniCuuSv>>> Filter(string? sex, string? searchQuery, int page = 1, int pageSize = 5)
+		{
+			var query = _context.AlumniCuuSvs.AsQueryable();
+
+			// Lọc theo giới tính
+			if (!string.IsNullOrEmpty(sex))
+			{
+				query = query.Where(sv => sv.GioiTinh == sex);
+			}
+
+			// Tìm kiếm theo từ khóa
+			if (!string.IsNullOrEmpty(searchQuery))
+			{
+
+				query = query.Where(sv =>
+				(sv.HoTenCuuSv != null && sv.HoTenCuuSv.Contains(searchQuery)) ||
+				(sv.MaSoSv != null && sv.MaSoSv.Contains(searchQuery)));
+			}
+
+			// Tính tổng số lượng phần tử
+			var totalItems = await query.CountAsync();
+
+			// Phân trang
+			var data = await query
+				.Skip((page - 1) * pageSize)
+				.Take(pageSize)
+				.ToListAsync();
+
+			Response.Headers.Add("X-Total-Count", totalItems.ToString());
+
+			return Ok(data);
 		}
 	}
 }

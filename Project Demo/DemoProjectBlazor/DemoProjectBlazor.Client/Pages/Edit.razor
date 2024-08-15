@@ -67,23 +67,63 @@
 				<dl class="details-horizontal">
 					<dt>Trường</dt>
 					<dd>
-						<input id="TruongId" @bind="sv.TruongId" class="form-control" />
+						<select id="TruongId" class="form-control" @bind="sv.TruongId">
+							<option value="">Chọn trường</option>
+							@foreach (var truong in truongHocList)
+							{
+								<option value="@truong.Value">
+									@truong.Text
+								</option>
+							}
+						</select>
 					</dd>
 					<dt>Quốc gia</dt>
 					<dd>
-						<input id="QuocGiaId" @bind="sv.QuocGiaId" class="form-control" />
+						<select id="QuocGiaId" class="form-control" @bind="sv.QuocGiaId">
+							<option value="">Chọn quốc gia</option>
+							@foreach (var quocGia in quocGiaList)
+							{
+								<option value="@quocGia.Value">
+									@quocGia.Text
+								</option>
+							}
+						</select>
 					</dd>
 					<dt>Tỉnh thành phố</dt>
 					<dd>
-						<input id="TinhThanhId" @bind="sv.TinhThanhId" class="form-control" />
+						<select id="TinhThanhId" class="form-control" @bind="sv.TinhThanhId">
+							<option value="">Chọn tỉnh thành</option>
+							@foreach (var tinhThanh in tinhThanhList)
+							{
+								<option value="@tinhThanh.Value">
+									@tinhThanh.Text
+								</option>
+							}
+						</select>
 					</dd>
 					<dt>Quận huyện</dt>
 					<dd>
-						<input id="QuanHuyenId" @bind="sv.QuanHuyenId" class="form-control" />
+						<select id="QuanHuyenId" class="form-control" @bind="sv.QuanHuyenId">
+							<option value="">Chọn quận huyện</option>
+							@foreach (var quanHuyen in quanHuyenList)
+							{
+								<option value="@quanHuyen.Value">
+									@quanHuyen.Text
+								</option>
+							}
+						</select>
 					</dd>
 					<dt>Xã phường</dt>
 					<dd>
-						<input id="XaPhuongId" @bind="sv.XaPhuongId" class="form-control" />
+						<select id="XaPhuongId" class="form-control" @bind="sv.XaPhuongId">
+							<option value="">Chọn xã phường</option>
+							@foreach (var xaPhuong in phuongXaList)
+							{
+								<option value="@xaPhuong.Value">
+									@xaPhuong.Text
+								</option>
+							}
+						</select>
 					</dd>
 				</dl>
 			</div>
@@ -178,6 +218,27 @@
 	[Parameter]
 	public Guid Id { get; set; }
 	private AlumniCuuSv? sv;
+	private List<MvcSelectListItem> quocGiaList = new();
+	private List<MvcSelectListItem> truongHocList = new();
+	private List<MvcSelectListItem> phuongXaList = new();
+	private List<MvcSelectListItem> tinhThanhList = new();
+	private List<MvcSelectListItem> quanHuyenList = new();
+
+	public class ApiData
+	{
+		public List<MvcSelectListItem> QuocGias { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> Truongs { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> TinhThanhs { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> QuanHuyens { get; set; } = new List<MvcSelectListItem>();
+		public List<MvcSelectListItem> PhuongXas { get; set; } = new List<MvcSelectListItem>();
+	}
+
+	public class MvcSelectListItem
+	{
+		// public string Value { get; set; } = string.Empty;
+		public Guid? Value { get; set; }
+		public string Text { get; set; } = string.Empty;
+	}
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -194,6 +255,17 @@
 		{
 			// Xử lý trường hợp không có dữ liệu
 			Navigation.NavigateTo("error");
+		}
+
+		var response = await Http.GetFromJsonAsync<ApiData>("api/cuuSinhVien/dataCuuSV");
+
+		if (response != null)
+		{
+			quocGiaList = response.QuocGias;
+			truongHocList = response.Truongs;
+			phuongXaList = response.PhuongXas;
+			tinhThanhList = response.TinhThanhs;
+			quanHuyenList = response.QuanHuyens;
 		}
 	}
 
