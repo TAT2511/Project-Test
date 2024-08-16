@@ -2,6 +2,7 @@
 using DemoProjectBlazor.Server.Data;
 using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace DemoProjectBlazor.Client.Pages
 {
@@ -180,9 +181,9 @@ namespace DemoProjectBlazor.Client.Pages
 			selectedStudent = null;
 			isInfoPopupOpen = false;
 		}
-
 		private string? searchQuery;
 		private string? selectedGender;
+
 		private async Task OnSearchAsync()
 		{
 			var queryParams = new List<string>();
@@ -198,16 +199,31 @@ namespace DemoProjectBlazor.Client.Pages
 			}
 
 			var queryString = string.Join("&", queryParams);
-			var response = await Http.GetFromJsonAsync<List<AlumniCuuSv>>($"api/cuuSinhVien/Filter?{queryString}&page={CurrentPage}&pageSize={PageSize}");
 
-			dsCuuSinhVien = response ?? new List<AlumniCuuSv>();
+			// Sử dụng HttpClient để gửi yêu cầu và lấy toàn bộ HttpResponseMessage
+			var response = await Http.GetAsync($"api/cuuSinhVien/Filter?{queryString}&page={CurrentPage}&pageSize={PageSize}");
 
-			// Kiểm tra header để lấy số lượng tổng
-			var totalCountHeader = Http.DefaultRequestHeaders.GetValues("X-Total-Count").FirstOrDefault();
-			TotalItems = !string.IsNullOrEmpty(totalCountHeader) ? int.Parse(totalCountHeader) : 0;
-			TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+			if (response.IsSuccessStatusCode)
+			{
+				// Đọc nội dung JSON từ response
+				var responseBody = await response.Content.ReadFromJsonAsync<List<AlumniCuuSv>>();
+				dsCuuSinhVien = responseBody ?? new List<AlumniCuuSv>();
 
-			StateHasChanged();
+				// Lấy tổng số lượng items từ header
+				if (response.Headers.TryGetValues("X-Total-Count", out var values))
+				{
+					var totalItemsHeader = values.FirstOrDefault();
+					TotalItems = int.Parse(totalItemsHeader ?? "0");
+					TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+				}
+
+				StateHasChanged();  // Cập nhật lại UI
+			}
+			else
+			{
+				// Xử lý lỗi nếu response không thành công
+				Console.WriteLine("Lỗi khi lấy dữ liệu từ server.");
+			}
 		}
 	}
 }

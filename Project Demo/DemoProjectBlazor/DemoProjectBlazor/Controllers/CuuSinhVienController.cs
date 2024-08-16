@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using static DemoProjectBlazor.Client.Pages.Create;
 using Microsoft.IdentityModel.Tokens;
 using MvcSelectListItem = Microsoft.AspNetCore.Mvc.Rendering.SelectListItem;
+using System;
 
 namespace DemoProjectBlazor.Controllers
 {
@@ -180,37 +181,29 @@ namespace DemoProjectBlazor.Controllers
 
 			return Ok(result);
 		}
+
+
 		[HttpGet("Filter")]
-		public async Task<IActionResult> Filter([FromQuery] string? sex, [FromQuery] string? searchQuery, [FromQuery] int page = 1, [FromQuery] int pageSize = 5)
+		public async Task<IActionResult> Filter([FromQuery] string? sex, [FromQuery] string? searchQuery, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
 		{
-			// Giả sử bạn có một phương thức để lấy dữ liệu và tổng số mục
-			var query = _context.AlumniCuuSv.AsQueryable();
+			IQueryable<AlumniCuuSv> query = _context.AlumniCuuSvs.AsQueryable();
 
 			if (!string.IsNullOrEmpty(sex))
 			{
-				query = query.Where(sv => sv.Gender == sex);
+				query = query.Where(sv => sv.GioiTinh == sex);
 			}
 
 			if (!string.IsNullOrEmpty(searchQuery))
 			{
-				query = query.Where(sv => sv.Name.Contains(searchQuery));
+				query = query.Where(sv => sv.MaSoSv.Contains(searchQuery) || sv.HoTenCuuSv.Contains(searchQuery));
 			}
 
-			var totalCount = await query.CountAsync();
-			var data = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+			var totalItems = await query.CountAsync();
+			var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
-			var response = new FilterResponse
-			{
-				Data = data,
-				TotalCount = totalCount
-			};
+			Response.Headers.Add("X-Total-Count", totalItems.ToString());
 
-			return Ok(response);
-		}
-		public class FilterResponse
-		{
-			public List<AlumniCuuSv> Data { get; set; }
-			public int TotalCount { get; set; }
+			return Ok(results);
 		}
 	}
 }

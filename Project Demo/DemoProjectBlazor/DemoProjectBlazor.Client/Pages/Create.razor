@@ -37,7 +37,7 @@
 
 		<div class="form-group col-3">
 			<label for="HoCuuSv">Họ cựu sinh viên:</label>
-			<input id="HoCuuSv" class="form-control" @bind="sv.HoCuuSv" @oninput="CheckHoCuuSv" />
+			<input id="HoCuuSv" class="form-control" @bind="sv.HoCuuSv" @oninput="CheckHoCuuSv" required/>
 			@if (!string.IsNullOrWhiteSpace(hoCuuSvWarning))
 			{
 				<div class="text-errors">@hoCuuSvWarning</div>
@@ -46,7 +46,7 @@
 
 		<div class="form-group col-3">
 			<label for="TenCuuSv">Tên cựu sinh viên:</label>
-			<input id="TenCuuSv" class="form-control" @bind="sv.TenCuuSv" @oninput="CheckTenCuuSv" />
+			<input id="TenCuuSv" class="form-control" @bind="sv.TenCuuSv" @oninput="CheckTenCuuSv" required/>
 			@if (!string.IsNullOrWhiteSpace(tenCuuSvWarning))
 			{
 				<div class="text-errors">@tenCuuSvWarning</div>
@@ -55,7 +55,7 @@
 
 		<div class="form-group col-3">
 			<label for="HoTenCuuSv">Họ tên cựu sinh viên:</label>
-			<input id="HoTenCuuSv" class="form-control" @bind="sv.HoTenCuuSv" @oninput="CheckHoTenCuuSv" />
+			<input id="HoTenCuuSv" class="form-control" @bind="sv.HoTenCuuSv" @oninput="CheckHoTenCuuSv" required/>
 			@if (!string.IsNullOrWhiteSpace(hoTenCuuSvWarning))
 			{
 				<div class="text-errors">@hoTenCuuSvWarning</div>
@@ -91,7 +91,7 @@
 
 		<div class="form-group col-3">
 			<label for="DanToc">Dân tộc:</label>
-			<input id="DanToc" class="form-control" @bind="sv.DanToc" @oninput="CheckDanToc" required />
+			<input id="DanToc" class="form-control" @bind="sv.DanToc" @oninput="CheckDanToc" />
 			@if (!string.IsNullOrWhiteSpace(DanTocWarning))
 			{
 				<div class="text-errors">@DanTocWarning</div>
@@ -100,7 +100,7 @@
 
 		<div class="form-group col-3">
 			<label for="TonGiao">Tôn giáo:</label>
-			<input id="TonGiao" class="form-control" @bind="sv.TonGiao" @oninput="CheckTonGiao" required />
+			<input id="TonGiao" class="form-control" @bind="sv.TonGiao" @oninput="CheckTonGiao" />
 			@if (!string.IsNullOrWhiteSpace(TonGiaoWarning))
 			{
 				<div class="text-errors">@TonGiaoWarning</div>
@@ -110,7 +110,7 @@
 		<div class="form-group col-3">
 			<label for="QuocGiaId">Quốc gia:</label>
 			<select id="QuocGiaId" class="form-control" @bind="sv.QuocGiaId">
-				<option value="">Chọn trường</option>
+				<option value="">Chọn quốc gia</option>
 				@foreach (var quocGia in quocGiaList)
 				{
 					<option value="@quocGia.Value">
@@ -161,21 +161,25 @@
 
 		<div class="form-group col-3">
 			<label for="DiaChiLienHe">Địa chỉ liên hệ:</label>
-			<input id="DiaChiLienHe" class="form-control" @bind="sv.DiaChiLienHe" @oninput="CheckDiaChiLienHe" required />
-			@if (!string.IsNullOrWhiteSpace(DiaChiLienHeWarning))
-			{
-				<div class="text-errors">@DiaChiLienHeWarning</div>
-			}
+			<input id="DiaChiLienHe" class="form-control" @bind="sv.DiaChiLienHe"  />
 		</div>
 
 		<div class="form-group col-3">
 			<label for="HinhAnhDaiDien">Hình ảnh đại diện:</label>
-			<input id="HinhAnhDaiDien" class="form-control" @bind="sv.HinhAnhDaiDien" />
+			<input id="HinhAnhDaiDien" class="form-control" @bind="sv.HinhAnhDaiDien" @oninput="CheckHinhAnhDaiDien" />
+			@if (!string.IsNullOrWhiteSpace(HinhAnhDaiDienWarning))
+			{
+				<div class="text-errors">@HinhAnhDaiDienWarning</div>
+			}
 		</div>
 
 		<div class="form-group col-3">
 			<label for="ThamGiaDoan">Tham gia đoàn:</label>
-			<input id="ThamGiaDoan" class="form-control" @bind="sv.ThamGiaDoan" />
+			<input id="ThamGiaDoan" class="form-control" @bind="sv.ThamGiaDoan" @oninput="CheckThamGiaDoan" />
+			@if (!string.IsNullOrWhiteSpace(ThamGiaDoanWarning))
+			{
+				<div class="text-errors">@ThamGiaDoanWarning</div>
+			}
 		</div>
 
 		<div class="form-group col-3">
@@ -185,7 +189,11 @@
 
 		<div class="form-group col-3">
 			<label for="ThamGiaDang">Tham gia đảng:</label>
-			<input id="ThamGiaDang" class="form-control" @bind="sv.ThamGiaDang" />
+			<input id="ThamGiaDang" class="form-control" @bind="sv.ThamGiaDang" @oninput="CheckThamGiaDang" />
+			@if (!string.IsNullOrWhiteSpace(ThamGiaDangWarning))
+			{
+				<div class="text-errors">@ThamGiaDangWarning</div>
+			}
 		</div>
 
 		<div class="form-group col-3">
@@ -204,7 +212,11 @@
 
 		<div class="form-group col-3">
 			<label for="QuocTich">Quốc tịch:</label>
-			<input id="QuocTich" class="form-control" @bind="sv.QuocTich" />
+			<input id="QuocTich" class="form-control" @bind="sv.QuocTich" @oninput="CheckQuocTich" />
+			@if (!string.IsNullOrWhiteSpace(QuocTichWarning))
+			{
+				<div class="text-errors">@QuocTichWarning</div>
+			}
 		</div>
 
 		<div class="form-group col-3">
@@ -214,7 +226,11 @@
 
 		<div class="form-group col-3">
 			<label for="NoiSinh">Nơi sinh:</label>
-			<input id="NoiSinh" class="form-control" @bind="sv.NoiSinh" />
+			<input id="NoiSinh" class="form-control" @bind="sv.NoiSinh" @oninput="CheckNoiSinh" />
+			@if (!string.IsNullOrWhiteSpace(NoiSinhWarning))
+			{
+				<div class="text-errors">@NoiSinhWarning</div>
+			}
 		</div>
 
 		<div class="button-container">
@@ -278,12 +294,18 @@
 			Console.WriteLine($"Error: {errorContent}");
 		}
 	}
+
 	//Kiểm tra và cảnh báo nhập cho các data còn lại
 	private string MaSoSvWarning = string.Empty;
 	private string MaDinhDanhWarning = string.Empty;
 	private string DanTocWarning = string.Empty;
 	private string TonGiaoWarning = string.Empty;
-	private string DiaChiLienHeWarning = string.Empty;
+	// private string DiaChiLienHeWarning = string.Empty;
+	private string HinhAnhDaiDienWarning = string.Empty;
+	private string ThamGiaDoanWarning = string.Empty;
+	private string ThamGiaDangWarning = string.Empty;
+	private string QuocTichWarning = string.Empty;
+	private string NoiSinhWarning = string.Empty;
 
 	private void CheckMaSoSv(ChangeEventArgs e)
 	{
@@ -313,10 +335,45 @@
 		StateHasChanged();
 	}
 
-	private void CheckDiaChiLienHe(ChangeEventArgs e)
+	// private void CheckDiaChiLienHe(ChangeEventArgs e)
+	// {
+	// 	sv.DiaChiLienHe = e.Value?.ToString() ?? string.Empty;
+	// 	DiaChiLienHeWarning = CheckData(sv.DiaChiLienHe, "Địa chỉ liên hệ");
+	// 	StateHasChanged();
+	// }
+
+	private void CheckHinhAnhDaiDien(ChangeEventArgs e)
 	{
-		sv.DiaChiLienHe = e.Value?.ToString() ?? string.Empty;
-		DiaChiLienHeWarning = CheckData(sv.DiaChiLienHe, "Địa chỉ liên hệ");
+		sv.HinhAnhDaiDien = e.Value?.ToString() ?? string.Empty;
+		HinhAnhDaiDienWarning = CheckData(sv.HinhAnhDaiDien, "Hình ảnh đại diện");
+		StateHasChanged();
+	}
+
+	private void CheckThamGiaDoan(ChangeEventArgs e)
+	{
+		sv.ThamGiaDoan = e.Value?.ToString() ?? string.Empty;
+		ThamGiaDoanWarning = CheckData(sv.ThamGiaDoan, "Tham gia đoàn");
+		StateHasChanged();
+	}
+
+	private void CheckThamGiaDang(ChangeEventArgs e)
+	{
+		sv.ThamGiaDang = e.Value?.ToString() ?? string.Empty;
+		ThamGiaDangWarning = CheckData(sv.ThamGiaDang, "Tham gia đảng");
+		StateHasChanged();
+	}
+
+	private void CheckQuocTich(ChangeEventArgs e)
+	{
+		sv.QuocTich = e.Value?.ToString() ?? string.Empty;
+		QuocTichWarning = CheckData(sv.QuocTich, "Quốc tịch");
+		StateHasChanged();
+	}
+
+	private void CheckNoiSinh(ChangeEventArgs e)
+	{
+		sv.NoiSinh = e.Value?.ToString() ?? string.Empty;
+		NoiSinhWarning = CheckData(sv.NoiSinh, "Nơi sinh");
 		StateHasChanged();
 	}
 
@@ -335,6 +392,7 @@
 
 		return null; // Không có lỗi
 	}
+
 	//Kiểm tra cảnh báo lỗi cho nhập họ tên sinh viên
 	private string hoCuuSvWarning = string.Empty;
 	private string tenCuuSvWarning = string.Empty;

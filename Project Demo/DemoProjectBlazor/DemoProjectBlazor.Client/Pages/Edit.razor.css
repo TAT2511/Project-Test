@@ -150,3 +150,13 @@
     .back-link:hover {
         color: #007bff;
     }
+
+.text-errors {
+    margin-top: 5px;
+    color: #ffc107; /* Màu vàng */
+    font-size: 14px;
+    font-style: italic;
+    border: 1px solid #ffc107; /* Khung xung quanh */
+    padding: 5px;
+    text-align: center; /* Căn giữa ngang */
+}

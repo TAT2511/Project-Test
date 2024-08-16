@@ -111,7 +111,7 @@
 
 @if (isSearchFormOpen)
 {
-	<form method="get" action="Filter" @onsubmit="OnSearchAsync">
+	<form method="get" @onsubmit="OnSearchAsync">
 		<div class="filter-section">
 			<div class="filter-column">
 				<label class="dropdown-label">Giới Tính:</label>
@@ -128,9 +128,7 @@
 			</div>
 
 			<div class="button-search-container">
-				<button type="button" @onclick="OnSearchAsync" class="button-search">
-					<i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span>
-				</button>
+				<button type="submit" class="button-search"><i class="fas fa-search"></i><span style="margin-left: 5px;">Tìm kiếm</span></button>
 				<a href="create" class="button-search">
 					<i class="fas fa-plus"></i><span style="margin-left: 5px;"> Thêm sinh viên</span>
 				</a>

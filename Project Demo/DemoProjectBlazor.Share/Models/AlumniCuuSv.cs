@@ -59,11 +59,11 @@ public partial class AlumniCuuSv
 
     public string? SoDienThoai { get; set; }
 
-    public string? QuocTich { get; set; }
+    public string? NoiSinh { get; set; }
 
     public string? NgaySinh { get; set; }
 
-    public string? NoiSinh { get; set; }
+    public string? QuocTich { get; set; }
 
     /// <summary>
     /// xác định thông tin cựu SV có được sử dụng / hiển thị trên hệ thống hay không
