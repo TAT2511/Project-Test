@@ -40,7 +40,8 @@ namespace DemoProjectBlazor.Client.Pages
 			{
 				CurrentPage = page;
 				await LoadData(page);
-				StateHasChanged();    
+				await OnSearchAsync();
+				StateHasChanged();
 			}
 		}	
 
@@ -200,30 +201,25 @@ namespace DemoProjectBlazor.Client.Pages
 
 			var queryString = string.Join("&", queryParams);
 
-			// Sử dụng HttpClient để gửi yêu cầu và lấy toàn bộ HttpResponseMessage
-			var response = await Http.GetAsync($"api/cuuSinhVien/Filter?{queryString}&page={CurrentPage}&pageSize={PageSize}");
+			// Sử dụng HttpResponseMessage để truy cập vào Headers
+			var responseMessage = await Http.GetAsync($"api/cuuSinhVien/Filter?{queryString}&page={CurrentPage}&pageSize={PageSize}");
 
-			if (response.IsSuccessStatusCode)
+			if (responseMessage.IsSuccessStatusCode)
 			{
-				// Đọc nội dung JSON từ response
-				var responseBody = await response.Content.ReadFromJsonAsync<List<AlumniCuuSv>>();
-				dsCuuSinhVien = responseBody ?? new List<AlumniCuuSv>();
+				// Lấy dữ liệu từ response
+				var response = await responseMessage.Content.ReadFromJsonAsync<List<AlumniCuuSv>>();
+				dsCuuSinhVien = response ?? new List<AlumniCuuSv>();
 
-				// Lấy tổng số lượng items từ header
-				if (response.Headers.TryGetValues("X-Total-Count", out var values))
+				// Lấy tổng số bản ghi từ Headers
+				if (responseMessage.Headers.TryGetValues("X-Total-Count", out var values))
 				{
-					var totalItemsHeader = values.FirstOrDefault();
-					TotalItems = int.Parse(totalItemsHeader ?? "0");
-					TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+					TotalItems = int.Parse(values.FirstOrDefault() ?? "0");
 				}
 
-				StateHasChanged();  // Cập nhật lại UI
+				TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
 			}
-			else
-			{
-				// Xử lý lỗi nếu response không thành công
-				Console.WriteLine("Lỗi khi lấy dữ liệu từ server.");
-			}
+
+			StateHasChanged();
 		}
 	}
 }
