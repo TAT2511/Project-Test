@@ -184,7 +184,6 @@ namespace DemoProjectBlazor.Client.Pages
 		}
 		private string? searchQuery;
 		private string? selectedGender;
-
 		private async Task OnSearchAsync()
 		{
 			var queryParams = new List<string>();
@@ -193,7 +192,7 @@ namespace DemoProjectBlazor.Client.Pages
 			{
 				queryParams.Add($"sex={selectedGender}");
 			}
-
+			
 			if (!string.IsNullOrEmpty(searchQuery))
 			{
 				queryParams.Add($"searchQuery={searchQuery}");

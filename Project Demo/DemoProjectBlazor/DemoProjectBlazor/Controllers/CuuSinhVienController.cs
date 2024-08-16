@@ -184,13 +184,19 @@ namespace DemoProjectBlazor.Controllers
 
 
 		[HttpGet("Filter")]
-		public async Task<IActionResult> Filter([FromQuery] string? sex, [FromQuery] string? searchQuery, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+		public async Task<IActionResult> Filter([FromQuery] string? sex,[FromQuery] string? quocGia, [FromQuery] string? searchQuery, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
 		{
 			IQueryable<AlumniCuuSv> query = _context.AlumniCuuSvs.AsQueryable();
+			IQueryable<AlumniQuocGium> querys = _context.AlumniQuocGia.AsQueryable();
 
 			if (!string.IsNullOrEmpty(sex))
 			{
 				query = query.Where(sv => sv.GioiTinh == sex);
+			}
+
+			if (!string.IsNullOrEmpty(quocGia))
+			{
+				querys = querys.Where(sv => sv.TenQuocGia == quocGia);
 			}
 
 			if (!string.IsNullOrEmpty(searchQuery))
