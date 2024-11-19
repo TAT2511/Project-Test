@@ -53,7 +53,9 @@ Dự án của tôi là dự án demo những gì đã tìm hiểu được sau 
 - SQL
 
 ## User guide:
-<p>Mua và bán sản phẩm: Bạn có thể tìm sản phẩm bạn muốn mua bằng cách sử dụng chức năng tìm kiếm hoặc duyệt qua các danh mục sản phẩm. Khi bạn tìm thấy một sản phẩm, bạn có thể thêm vào giỏ hàng và tiến hành thanh toán.</p>
+<p>Để quản lý thông tin sinh viên:</p>
+<p> Sử dụng chức năng tìm kiếm hoặc duyệt qua các danh mục để tìm sinh viên.</p>
+<p> Một khi bạn tìm thấy một sinh viên, bạn có thể thêm, sửa hoặc xóa thông tin của họ.</p>
 
 ## Project Demo:
 - Quản lý sinh viên:
